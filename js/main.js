@@ -53,7 +53,7 @@ function applyAnimation(elements) {
 
 async function fetchReviews() {
     const container = document.getElementById('reviews-container');
-    const API_URL = "https://core.wappti.app/api/v1/marketing/latest-reviews"; // Reemplaza con tu URL real
+    const API_URL = "/api-reviews/";
 
     try {
         const response = await fetch(API_URL);
@@ -222,3 +222,4 @@ const messagesEl = document.getElementById('messages');
 
 
   window.addEventListener('load', () => setTimeout(startSequence, 700));
+
