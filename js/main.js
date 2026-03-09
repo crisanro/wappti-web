@@ -56,6 +56,7 @@ async function fetchReviews() {
     const API_URL = "/api-reviews/";
 
     try {
+        console.log("Llamando a:", API_URL);
         const response = await fetch(API_URL);
         if (!response.ok) throw new Error('Error al obtener datos');
 
@@ -222,4 +223,5 @@ const messagesEl = document.getElementById('messages');
 
 
   window.addEventListener('load', () => setTimeout(startSequence, 700));
+
 
