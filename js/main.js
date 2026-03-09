@@ -53,7 +53,7 @@ function applyAnimation(elements) {
 
 async function fetchReviews() {
     const container = document.getElementById('reviews-container');
-    const API_URL = "http://core.wappti.app/api/v1/marketing/latest-reviews"; // Reemplaza con tu URL real
+    const API_URL = "https://core.wappti.app/api/v1/marketing/latest-reviews"; // Reemplaza con tu URL real
 
     try {
         const response = await fetch(API_URL);
@@ -219,5 +219,6 @@ const messagesEl = document.getElementById('messages');
       { label: '📅 Reagendar cita', cls: 'reagendar', action: flowReagendar },
     ]);
   }
+
 
   window.addEventListener('load', () => setTimeout(startSequence, 700));
