@@ -108,8 +108,10 @@ footer p a { color: var(--teal); text-decoration: none; }
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
   .hero { grid-template-columns: 1fr !important; padding: 3rem 5%; text-align: center; }
+  .hero-img { order: -1; display: flex !important; margin-bottom: 2rem;}/* Quita el display:none que tenías */
+  .hero-content {     order: 1;   }
   .hero p { margin: 0 auto 2rem; }
-  .hero-img { display: none; }
+  /*.hero-img { display: none; }*/
   .para-quien-grid { grid-template-columns: 1fr !important; }
   .ventajas-grid { grid-template-columns: 1fr !important; }
   .testimonios-grid { grid-template-columns: 1fr !important; }
@@ -120,7 +122,7 @@ footer p a { color: var(--teal); text-decoration: none; }
 
 /* ── HERO ── */
 .hero {
-  min-height: 92vh;
+  min-height: 65vh;
   display: grid; grid-template-columns: 1fr 1fr;
   align-items: center; gap: 2rem;
   padding: 4rem 8%;
