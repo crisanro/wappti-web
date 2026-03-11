@@ -66,6 +66,17 @@ nav {
 }
 .btn-outline-white:hover { background: rgba(255,255,255,.12); }
 
+
+.btn-outline-teal {
+  background: transparent;
+  color: var(--teal);
+  border: 2px solid var(--teal);
+}
+.btn-outline-teal:hover {
+  background: var(--teal);
+  color: white;
+}
+
 /* ── STORE BUTTONS ── */
 .store-btn {
   display: flex; align-items: center; gap: .6rem;
@@ -552,4 +563,5 @@ footer p a { color: var(--teal); text-decoration: none; }
 @keyframes fadeSlideUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes bounce { 0%,80%,100% { transform: translateY(0); } 40% { transform: translateY(-4px); } }
 @keyframes popIn { from { opacity: 0; transform: translateX(-50%) scale(.6); } to { opacity: 1; transform: translateX(-50%) scale(1); } }
+
 @keyframes wiggle { 0%,100% { transform: rotate(0deg); } 25% { transform: rotate(-22deg); } 75% { transform: rotate(22deg); } }
