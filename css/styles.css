@@ -165,55 +165,106 @@ footer p a { color: var(--teal); text-decoration: none; }
   position: relative;
 }
 
-/* Phone mockup */
-.phone-mock {
-  width: 260px; height: 520px;
-  background: #111; border-radius: 38px;
-  border: 6px solid #222;
-  box-shadow: 0 30px 80px rgba(0,0,0,.25), 0 0 0 1px #333;
-  display: flex; flex-direction: column;
-  overflow: hidden; position: relative;
+/* Hero img wrapper */
+.phone-wrap-static {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.phone-screen { flex: 1; background: #ECE5DD; display: flex; flex-direction: column; }
-.phone-header {
-  background: #075E54; padding: .6rem 1rem;
-  display: flex; align-items: center; gap: .5rem;
+ 
+/* SVG del teléfono */
+.phone-svg {
+  width: 260px;
+  height: auto;
+  filter: drop-shadow(0 30px 60px rgba(0,0,0,0.35)) drop-shadow(0 0 0 1px rgba(255,255,255,0.04));
+  /* Animación de entrada suave */
+  animation: phoneFloat 6s ease-in-out infinite, phoneFadeIn 0.8s ease both;
 }
-.phone-avatar {
-  width: 32px; height: 32px; border-radius: 50%;
-  background: #25D366; display: flex; align-items: center;
-  justify-content: center; color: white; font-size: .8rem; font-weight: 700;
+ 
+@keyframes phoneFadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
-.phone-contact { color: white; font-size: .75rem; font-weight: 700; }
-.phone-messages { flex: 1; padding: .8rem; display: flex; flex-direction: column; gap: .5rem; }
-.msg {
-  max-width: 80%; padding: .5rem .8rem;
-  border-radius: 10px; font-size: .65rem; line-height: 1.4;
+ 
+@keyframes phoneFloat {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
 }
-.msg-in  { background: white; align-self: flex-start; border-radius: 0 10px 10px 10px; }
-.msg-out { background: #DCF8C6; align-self: flex-end; border-radius: 10px 10px 0 10px; }
-.msg-time { font-size: .55rem; color: #aaa; text-align: right; margin-top: 2px; }
-.confirm-btns { display: flex; gap: .4rem; margin-top: .3rem; }
-.confirm-btns button {
-  flex: 1; padding: .4rem; border: none; border-radius: 6px;
-  font-size: .65rem; font-weight: 700; cursor: default;
+ 
+/* Animaciones de los mensajes — staggered, 100% CSS */
+.msg-anim-1 {
+  opacity: 0;
+  animation: msgIn 0.4s ease 0.4s forwards;
 }
-.btn-confirm { background: #25D366; color: white; }
-.btn-cancel  { background: #f0f0f0; color: #555; }
-
-.bubble {
-  position: absolute; right: -10px; top: 50%;
-  transform: translateY(-60%);
-  background: white; border-radius: 12px;
-  padding: .6rem .9rem; font-size: .7rem;
-  box-shadow: 0 8px 24px rgba(0,0,0,.12);
-  max-width: 130px; line-height: 1.4;
-  color: var(--text); font-weight: 600;
+.msg-anim-2 {
+  opacity: 0;
+  animation: msgIn 0.4s ease 0.9s forwards;
 }
-.bubble::before {
-  content: ''; position: absolute; left: -8px; top: 50%;
-  transform: translateY(-50%);
-  border: 8px solid transparent; border-right-color: white; border-left: none;
+.msg-anim-3 {
+  opacity: 0;
+  animation: msgIn 0.4s ease 1.4s forwards;
+}
+.msg-anim-4 {
+  opacity: 0;
+  animation: msgIn 0.4s ease 1.9s forwards;
+}
+ 
+@keyframes msgIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+ 
+/* Badges flotantes de stats */
+.stat-badge {
+  position: absolute;
+  background: white;
+  border-radius: 12px;
+  padding: 0.55rem 0.9rem;
+  font-size: 0.72rem;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.13);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #1A2B2F;
+  font-family: 'Nunito', sans-serif;
+  white-space: nowrap;
+  animation: badgePop 0.5s cubic-bezier(.34,1.56,.64,1) both;
+}
+ 
+.stat-badge strong {
+  display: block;
+  font-weight: 900;
+  color: #2BB5A0;
+  font-size: 0.85rem;
+}
+ 
+.stat-badge__icon {
+  font-size: 1.2rem;
+}
+ 
+.stat-badge--top {
+  top: 12%;
+  right: -20px;
+  animation-delay: 1.2s;
+}
+ 
+.stat-badge--bottom {
+  bottom: 14%;
+  left: -20px;
+  animation-delay: 1.6s;
+}
+ 
+@keyframes badgePop {
+  from { opacity: 0; transform: scale(0.7); }
+  to   { opacity: 1; transform: scale(1); }
+}
+ 
+/* Responsive — en móvil los badges no se cortan */
+@media (max-width: 768px) {
+  .phone-svg { width: 220px; }
+  .stat-badge--top  { right: -10px; }
+  .stat-badge--bottom { left: -10px; }
 }
 
 /* ── PARA QUIÉN ── */
