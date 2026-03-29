@@ -129,6 +129,7 @@ footer p a { color: var(--teal); text-decoration: none; }
   .faq-section__grid { grid-template-columns: 1fr !important; }
   .cta-band { flex-direction: column; text-align: center; padding: 2rem; }
   .precios-grid { grid-template-columns: 1fr !important; }
+
 }
 
 /* ── HERO ── */
@@ -304,7 +305,13 @@ footer p a { color: var(--teal); text-decoration: none; }
   gap: 2rem; flex-wrap: wrap;
 }
 .cta-band h2 { font-size: 1.6rem; font-weight: 900; color: white; }
-.cta-band-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+.cta-band-btns { 
+  display: flex; /* Cambiado de initial a flex */
+  gap: 1rem; 
+  flex-wrap: wrap; 
+  justify-content: center; /* Esto centra los botones horizontalmente */
+  align-items: center;    /* Esto los centra verticalmente entre sí */
+}
 
 /* ── VENTAJAS ── */
 .ventajas { padding: 6rem 8%; background: var(--bg-gray); }
