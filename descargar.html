@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Descargar Wappti – App para Agendar y Confirmar Citas</title>
+  <meta name="description" content="Descarga Wappti para iOS y Android. La mejor app para confirmar citas y enviar recordatorios automáticamente por WhatsApp.">
+  
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    /* ── ESTILOS EXCLUSIVOS PARA LA LANDING DE DESCARGA ── */
+    .download-section {
+      min-height: calc(100vh - 64px); /* Ocupa toda la pantalla menos el header */
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, var(--bg-gray) 0%, #e8f6f4 100%);
+      padding: 4rem 8%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Círculos decorativos de fondo */
+    .download-section::before {
+      content: ''; position: absolute; left: -10vw; top: -10vh;
+      width: 40vw; height: 40vw; border-radius: 50%;
+      background: radial-gradient(circle, rgba(224,123,57,0.05) 0%, transparent 70%);
+      z-index: 0;
+    }
+    .download-section::after {
+      content: ''; position: absolute; right: -5vw; bottom: -10vh;
+      width: 35vw; height: 35vw; border-radius: 50%;
+      background: radial-gradient(circle, rgba(43,181,160,0.08) 0%, transparent 70%);
+      z-index: 0;
+    }
+
+    .download-container {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      z-index: 1;
+    }
+
+    .download-content h1 {
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-weight: 900;
+      color: var(--dark);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+    .download-content h1 span { color: var(--teal); }
+    
+    .download-content p {
+      font-size: clamp(1.1rem, 2vw, 1.25rem);
+      color: var(--text);
+      line-height: 1.6;
+      margin-bottom: 2.5rem;
+      max-width: 500px;
+    }
+
+    /* Botones de Tienda XL (Específicos para conversión) */
+    .store-buttons-xl {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-store-xl {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: var(--dark);
+      color: white;
+      padding: 0.8rem 1.8rem;
+      border-radius: 16px;
+      text-decoration: none;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      border: 2px solid transparent;
+    }
+    
+    .btn-store-xl:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+      background: #000;
+    }
+
+    /* Variante para Google Play si quieres diferenciarlo */
+    .btn-store-xl.playstore:hover { border-color: var(--teal); }
+    .btn-store-xl.appstore:hover { border-color: var(--orange); }
+
+    .btn-store-xl i { font-size: 2.2rem; }
+    
+    .btn-store-xl-text { display: flex; flex-direction: column; text-align: left; }
+    .btn-store-xl-text small { font-size: 0.75rem; opacity: 0.8; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+    .btn-store-xl-text strong { font-size: 1.4rem; font-weight: 900; line-height: 1.1; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+
+    /* Trust indicators debajo de los botones */
+    .trust-indicators {
+      margin-top: 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    .trust-indicators .stars { color: #FFB400; letter-spacing: 2px; }
+
+    /* Mockup Contenedor */
+    .download-mockup {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    @media (max-width: 992px) {
+      .download-section { padding: 3rem 5%; text-align: center; }
+      .download-container { grid-template-columns: 1fr; gap: 3rem; }
+      .download-content p { margin: 0 auto 2rem; }
+      .store-buttons-xl { justify-content: center; }
+      .trust-indicators { justify-content: center; }
+      .download-mockup { order: -1; max-width: 320px; margin: 0 auto; }
+    }
+    
+    @media (max-width: 480px) {
+      .btn-store-xl { width: 100%; justify-content: center; }
+    }
+  </style>
+
+  <script>
+    // Si envías tráfico desde FB/IG, este script detecta el celular y abre la tienda automáticamente
+    document.addEventListener("DOMContentLoaded", function() {
+      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      const urlParams = new URLSearchParams(window.location.search);
+      
+      // Solo auto-redirige si viene con un parámetro en la URL como ?auto=true
+      if(urlParams.get('auto') === 'true') {
+        if (/android/i.test(userAgent)) {
+          window.location.href = "https://play.google.com/store/apps/details?id=com.androga.wappti";
+        } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+          window.location.href = "https://apps.apple.com/us/app/wappti-agenda-de-clientes/id6447773916";
+        }
+      }
+    });
+  </script>
+
+</head>
+<body>
+
+
+<section class="download-section">
+  <div class="download-container">
+    
+    <div class="download-content fade-up">
+      <div style="display: inline-block; background: rgba(43,181,160,0.15); color: var(--teal-dk); font-weight: 800; font-size: 0.8rem; padding: 0.4rem 1rem; border-radius: 50px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem;">
+        Disponible para iOS y Android
+      </div>
+      
+      <h1>La agenda inteligente en <span>tu bolsillo.</span></h1>
+      <p>Confirma asistencia, elimina los no-shows y automatiza tus recordatorios por WhatsApp en minutos. Empieza gratis hoy mismo.</p>
+      
+      <div class="store-buttons-xl delay-1 fade-up">
+        <a href="https://apps.apple.com/us/app/wappti-agenda-de-clientes/id6447773916" class="btn-store-xl appstore">
+          <i class="fab fa-apple"></i>
+          <div class="btn-store-xl-text">
+            <small>Descargar en el</small>
+            <strong>App Store</strong>
+          </div>
+        </a>
+        
+        <a href="https://play.google.com/store/apps/details?id=com.androga.wappti" class="btn-store-xl playstore">
+          <i class="fab fa-google-play" style="color: #4ade80;"></i>
+          <div class="btn-store-xl-text">
+            <small>Descargar en</small>
+            <strong>Google Play</strong>
+          </div>
+        </a>
+      </div>
+
+      <div class="trust-indicators delay-2 fade-up">
+        <div><span class="stars">⭐⭐⭐⭐⭐</span></div>
+        <div>Más de 1.000 negocios ya la usan</div>
+      </div>
+    </div>
+
+    <div class="download-mockup fade-up delay-1">
+      <div class="phone-wrap-v3">
+        <svg class="phone-svg-v3" viewBox="0 0 340 680" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="titaniumGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#4A4A4C"/><stop offset="25%" stop-color="#242425"/><stop offset="75%" stop-color="#181819"/><stop offset="100%" stop-color="#000000"/></linearGradient>
+            <linearGradient id="waBg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0B141A"/><stop offset="100%" stop-color="#080F13"/></linearGradient>
+            <filter id="msgShadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.12"/><feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#000" flood-opacity="0.08"/></filter>
+            <clipPath id="screenClip"><rect x="20" y="20" width="300" height="640" rx="38"/></clipPath>
+          </defs>
+          <rect x="11" y="11" width="318" height="658" rx="47" fill="#111"/>
+          <rect x="12" y="12" width="316" height="656" rx="46" fill="url(#titaniumGrad)"/>
+          <rect x="14" y="14" width="312" height="652" rx="44" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+          <rect x="20" y="20" width="300" height="640" rx="38" fill="#000"/>
+          <path d="M 10 160 h 2 v 32 h -2 z" fill="#333"/>
+          <path d="M 10 210 h 2 v 56 h -2 z" fill="#333"/>
+          <path d="M 10 280 h 2 v 56 h -2 z" fill="#333"/>
+          <path d="M 328 200 h 2 v 80 h -2 z" fill="#333"/>
+          <g clip-path="url(#screenClip)">
+            <rect x="20" y="20" width="300" height="640" fill="url(#waBg)"/>
+            <rect x="20" y="20" width="300" height="96" fill="#202C33"/>
+            <text class="svg-txt fw-bold" x="42" y="44" fill="white" font-size="13">9:41</text>
+            <rect x="264" y="34" width="18" height="10" rx="2" fill="none" stroke="white" stroke-width="1"/>
+            <rect x="266" y="36" width="14" height="6" rx="1" fill="white"/>
+            <rect x="115" y="30" width="110" height="26" rx="13" fill="#000"/>
+            <path d="M 36 84 l -7 -7 l 7 -7" stroke="rgba(255,255,255,0.7)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="74" cy="77" r="18" fill="#128C7E"/>
+            <text class="svg-txt fw-black" x="74" y="82" text-anchor="middle" fill="white" font-size="14">W</text>
+            <text class="svg-txt fw-bold" x="104" y="73" fill="white" font-size="14">Wappti</text>
+            <text class="svg-txt fw-medium" x="104" y="88" fill="rgba(255,255,255,0.6)" font-size="11">en línea</text>
+            <rect x="136" y="132" width="68" height="24" rx="12" fill="#182229" filter="url(#msgShadow)"/>
+            <text class="svg-txt fw-medium" x="170" y="148" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="11">Hoy</text>
+            <g class="wa-msg wa-msg-1" filter="url(#msgShadow)">
+              <path d="M 30 190 A 14 14 0 0 1 44 176 H 266 A 14 14 0 0 1 280 190 V 290 H 30 Z" fill="#202C33"/>
+              <path d="M 30 176 L 22 176 L 30 184 Z" fill="#202C33"/>
+              <text class="svg-txt fw-black" x="46" y="200" fill="#25D366" font-size="12">🗓 Recordatorio de cita</text>
+              <text class="svg-txt" x="46" y="222" fill="rgba(255,255,255,0.95)" font-size="13">Hola María 👋 Te recordamos</text>
+              <text class="svg-txt" x="46" y="240" fill="rgba(255,255,255,0.95)" font-size="13">tu cita programada para mañana:</text>
+              <rect x="42" y="250" width="226" height="32" rx="6" fill="#111B21"/>
+              <text class="svg-txt fw-bold" x="52" y="270" fill="rgba(255,255,255,0.95)" font-size="12">📅 Mar 22 · 10:00 AM</text>
+              <text class="svg-txt" x="270" y="282" text-anchor="end" fill="rgba(255,255,255,0.4)" font-size="10">10:42</text>
+              <rect x="30" y="291" width="250" height="38" fill="#202C33"/>
+              <text class="svg-txt fw-bold" x="155" y="315" text-anchor="middle" fill="#53bdeb" font-size="13">Confirmar asistencia</text>
+            </g>
+            <g class="wa-msg out wa-msg-2" filter="url(#msgShadow)">
+              <path d="M 130 352 A 14 14 0 0 1 144 338 H 310 V 362 A 14 14 0 0 1 296 376 H 130 Z" fill="#005C4B"/>
+              <path d="M 310 338 L 318 338 L 310 346 Z" fill="#005C4B"/>
+              <text class="svg-txt fw-medium" x="142" y="360" fill="rgba(255,255,255,0.95)" font-size="13">Confirmar asistencia</text>
+              <text class="svg-txt" x="275" y="368" text-anchor="end" fill="rgba(255,255,255,0.6)" font-size="10">10:43</text>
+              <path d="M 280 362 l 3 4 l 6 -6 m -3 6 l 6 -6" fill="none" stroke="#53bdeb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+            <g class="wa-msg wa-msg-3" filter="url(#msgShadow)">
+              <path d="M 30 404 A 14 14 0 0 1 44 390 H 216 A 14 14 0 0 1 230 404 V 426 A 14 14 0 0 1 216 440 H 44 A 14 14 0 0 1 30 426 Z" fill="#202C33"/>
+              <path d="M 30 390 L 22 390 L 30 398 Z" fill="#202C33"/>
+              <text class="svg-txt" x="42" y="412" fill="rgba(255,255,255,0.95)" font-size="13">¡Perfecto! 🎉 Tu cita está</text>
+              <text class="svg-txt" x="42" y="430" fill="rgba(255,255,255,0.95)" font-size="13">confirmada. ¡Te esperamos!</text>
+              <text class="svg-txt" x="220" y="434" text-anchor="end" fill="rgba(255,255,255,0.4)" font-size="10">10:43</text>
+            </g>
+            <rect x="20" y="580" width="300" height="60" fill="#202C33"/>
+            <rect x="30" y="588" width="234" height="42" rx="21" fill="#2A3942"/>
+            <text class="svg-txt" x="72" y="614" fill="rgba(255,255,255,0.4)" font-size="14">Mensaje</text>
+            <circle cx="292" cy="609" r="18" fill="#00A884"/>
+          </g>
+        </svg>
+
+        <div class="stat-pill stat-pill--bl" style="left: -15%; bottom: 20%;">
+          <div class="stat-pill__icon" style="background:rgba(83, 189, 235, 0.15); color: #53bdeb; border: 1px solid rgba(83, 189, 235, 0.3);">🤖</div>
+          <div>
+            <strong>Asistente Virtual</strong>
+            <span>Trabaja 24/7 por ti</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>

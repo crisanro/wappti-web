@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programa de Referidos – Wappti</title>
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <style>
+    /* ── ESTILOS EXCLUSIVOS DE REFERIDOS ── */
+    /* Aquí usamos las variables que ya existen en tu styles.css */
+
+    /* ── HERO REFERIDOS ── */
+    .hero-referidos {
+      background: linear-gradient(135deg, var(--dark) 0%, var(--teal-dk) 60%, var(--teal) 100%);
+      padding: 6rem 8% 5rem;
+      position: relative; overflow: hidden;
+      text-align: center;
+    }
+    .hero-referidos::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 70% 30%, rgba(255,255,255,.1) 0%, transparent 60%),
+                  radial-gradient(ellipse at 20% 80%, rgba(224,123,57,.15) 0%, transparent 50%);
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(224,123,57,.15); border: 1px solid rgba(224,123,57,.4);
+      color: #ffa166; font-size: .8rem; font-weight: 800;
+      padding: .35rem .9rem; border-radius: 100px; letter-spacing: .06em;
+      margin-bottom: 1.5rem; text-transform: uppercase;
+      position: relative;
+    }
+    .hero-referidos h1 {
+      font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 900;
+      color: #fff; line-height: 1.1; margin-bottom: 1.2rem;
+      position: relative;
+    }
+    .hero-referidos h1 span { color: #4adeca; }
+    .hero-referidos p {
+      font-size: clamp(1rem, 2vw, 1.15rem); color: #cbd5e1;
+      max-width: 560px; margin: 0 auto 2.5rem; line-height: 1.7;
+      position: relative;
+    }
+    .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; position: relative; }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      background: #152225; /* Un tono más oscuro basado en tu --dark */
+      padding: 2rem 8%;
+      display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap;
+      border-bottom: 1px solid var(--dark);
+    }
+    .stat { text-align: center; }
+    .stat-num { font-size: 2rem; font-weight: 900; color: #4adeca; font-family: 'Space Mono', monospace; }
+    .stat-label { font-size: .8rem; color: var(--muted); font-weight: 600; margin-top: .2rem; text-transform: uppercase; letter-spacing: .05em; }
+
+    /* ── SECTION WRAPPER ── */
+    .section { padding: 5rem 8%; }
+    .section-label {
+      display: inline-block; color: var(--teal); font-size: .78rem;
+      font-weight: 800; text-transform: uppercase; letter-spacing: .1em;
+      margin-bottom: .6rem;
+    }
+    .section-title { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 900; color: var(--dark); margin-bottom: .8rem; }
+    .section-sub { color: var(--muted); font-size: 1rem; line-height: 1.7; max-width: 560px; }
+
+    /* ── HOW IT WORKS ── */
+    .how { background: var(--bg-gray); }
+    .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .step-card {
+      background: #fff; border-radius: var(--radius); padding: 2rem 1.5rem;
+      border: 1px solid var(--border); position: relative;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .step-card:hover { transform: translateY(-4px); box-shadow: 0 4px 24px rgba(43,181,160,.10); }
+    .step-num {
+      width: 42px; height: 42px; border-radius: 12px;
+      background: #e8f6f4; color: var(--teal);
+      font-family: 'Space Mono', monospace; font-weight: 700; font-size: 1rem;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .step-card h3 { font-size: 1rem; font-weight: 800; color: var(--dark); margin-bottom: .5rem; }
+    .step-card p { font-size: .88rem; color: var(--muted); line-height: 1.6; }
+
+    /* ── COMMISSION SECTION ── */
+    .commissions { background: #fff; }
+    .commission-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .commission-card {
+      border-radius: var(--radius); padding: 2.5rem 2rem; text-align: center;
+      position: relative; overflow: hidden;
+      border: 2px solid transparent; transition: all .2s;
+    }
+    .commission-card:hover { transform: translateY(-4px); }
+    .commission-card.first {
+      background: linear-gradient(135deg, var(--teal-dk), var(--teal));
+      border-color: var(--teal);
+      box-shadow: 0 8px 32px rgba(43,181,160,.3);
+    }
+    .commission-card.second {
+      background: linear-gradient(135deg, #243a3e, var(--dark));
+      border-color: #2a4448;
+    }
+    .commission-card.third {
+      background: var(--bg-gray);
+      border-color: var(--border);
+    }
+    .commission-tag {
+      display: inline-block; font-size: .72rem; font-weight: 800;
+      text-transform: uppercase; letter-spacing: .08em;
+      padding: .3rem .8rem; border-radius: 100px; margin-bottom: 1rem;
+    }
+    .first .commission-tag { background: rgba(255,255,255,.2); color: #fff; }
+    .second .commission-tag { background: rgba(43,181,160,.15); color: var(--teal); }
+    .third .commission-tag { background: rgba(107,127,130,.15); color: var(--muted); }
+    .commission-pct {
+      font-size: 4rem; font-weight: 900; font-family: 'Space Mono', monospace;
+      line-height: 1; margin-bottom: .5rem;
+    }
+    .first .commission-pct { color: #fff; }
+    .second .commission-pct { color: var(--teal); }
+    .third .commission-pct { color: var(--dark); }
+    .commission-label { font-size: .95rem; font-weight: 700; margin-bottom: .8rem; }
+    .first .commission-label { color: #e8f6f4; }
+    .second .commission-label { color: #fff; }
+    .third .commission-label { color: var(--text); }
+    .commission-desc { font-size: .82rem; line-height: 1.6; }
+    .first .commission-desc { color: rgba(255,255,255,.75); }
+    .second .commission-desc { color: rgba(255,255,255,.6); }
+    .third .commission-desc { color: var(--muted); }
+    .commission-example {
+      margin-top: 1.2rem; padding: .8rem; border-radius: 8px;
+      font-size: .8rem; font-family: 'Space Mono', monospace;
+    }
+    .first .commission-example { background: rgba(255,255,255,.15); color: #e8f6f4; }
+    .second .commission-example { background: rgba(255,255,255,.05); color: var(--teal); }
+    .third .commission-example { background: #fff; color: var(--text); }
+
+    .commission-note {
+      background: #fdf2e9; border: 1px solid #fbdcbd;
+      border-radius: var(--radius); padding: 1.5rem 2rem; margin-top: 2rem;
+      display: flex; gap: 1rem; align-items: flex-start;
+    }
+    .commission-note-icon { font-size: 1.4rem; flex-shrink: 0; }
+    .commission-note p { font-size: .88rem; color: #92400e; line-height: 1.7; }
+    .commission-note strong { color: #78350f; }
+
+    /* ── PAYMENT SECTION ── */
+    .payments { background: var(--bg-gray); }
+    .payment-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem; }
+    .payment-card {
+      background: #fff; border-radius: var(--radius); padding: 2rem;
+      border: 1px solid var(--border);
+    }
+    .payment-card h3 { font-size: 1rem; font-weight: 800; color: var(--dark); margin-bottom: 1.2rem; display: flex; align-items: center; gap: .6rem; }
+    .payment-list { list-style: none; display: flex; flex-direction: column; gap: .8rem; }
+    .payment-list li { font-size: .88rem; color: var(--text); line-height: 1.6; display: flex; gap: .6rem; align-items: flex-start; }
+
+    .timeline-block { margin-top: 3rem; }
+    .timeline-title { font-size: 1rem; font-weight: 800; color: var(--dark); margin-bottom: 1.5rem; }
+    .timeline { display: flex; gap: 0; position: relative; }
+    .timeline::before {
+      content: ''; position: absolute; top: 20px; left: 20px; right: 20px;
+      height: 2px; background: linear-gradient(90deg, var(--teal), var(--orange));
+    }
+    .timeline-item { flex: 1; text-align: center; position: relative; padding-top: 50px; }
+    .timeline-dot {
+      width: 40px; height: 40px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .75rem; font-weight: 800; font-family: 'Space Mono', monospace;
+      position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+      border: 3px solid #fff; box-shadow: 0 2px 8px rgba(0,0,0,.1);
+    }
+    .timeline-dot.event { background: var(--teal); color: #fff; }
+    .timeline-dot.wait { background: var(--orange); color: #fff; }
+    .timeline-dot.pay { background: #10b981; color: #fff; }
+    .timeline-item-label { font-size: .75rem; font-weight: 700; color: var(--dark); margin-top: .5rem; }
+    .timeline-item-sub { font-size: .7rem; color: var(--muted); margin-top: .3rem; line-height: 1.4; }
+
+    /* ── RULES ── */
+    .rules { background: #fff; }
+    .rules-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .rule-card {
+      border-radius: var(--radius); padding: 1.8rem;
+      border: 1px solid var(--border); display: flex; gap: 1rem;
+    }
+    .rule-icon {
+      width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
+    }
+    .rule-icon.green { background: #e8f6f4; }
+    .rule-icon.orange { background: #fdf2e9; }
+    .rule-icon.blue { background: #f4f6f7; }
+    .rule-icon.red { background: #fee2e2; }
+    .rule-card h4 { font-size: .9rem; font-weight: 800; color: var(--dark); margin-bottom: .4rem; }
+    .rule-card p { font-size: .83rem; color: var(--muted); line-height: 1.6; }
+
+    /* ── BENEFICIO REFERIDO ── */
+    .referido-bonus {
+      background: linear-gradient(135deg, var(--dark) 0%, var(--teal-dk) 100%);
+      padding: 5rem 8%; text-align: center;
+    }
+    .referido-bonus h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 900; color: #fff; margin-bottom: 1rem; }
+    .referido-bonus p { color: #e8f6f4; font-size: 1rem; line-height: 1.7; max-width: 520px; margin: 0 auto 2rem; }
+    .bonus-pill {
+      display: inline-flex; align-items: center; gap: .6rem;
+      background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.25);
+      color: #fff; padding: .8rem 1.8rem; border-radius: 100px;
+      font-weight: 800; font-size: 1.05rem;
+    }
+
+    /* ── FAQ ── */
+    .faq { background: var(--bg-gray); }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3rem; }
+    .faq-item {
+      background: #fff; border-radius: var(--radius); padding: 1.8rem;
+      border: 1px solid var(--border);
+    }
+    .faq-item h4 { font-size: .9rem; font-weight: 800; color: var(--dark); margin-bottom: .6rem; }
+    .faq-item p { font-size: .85rem; color: var(--muted); line-height: 1.7; }
+
+    /* ── CTA FINAL ── */
+    .cta-final {
+      background: var(--dark); padding: 5rem 8%; text-align: center;
+    }
+    .cta-final h2 { font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 900; color: #fff; margin-bottom: 1rem; }
+    .cta-final p { color: var(--muted); font-size: 1rem; margin-bottom: 2rem; }
+
+    @media (max-width: 768px) {
+      .payment-grid, .faq-grid { grid-template-columns: 1fr; }
+      .stats-bar { gap: 2rem; }
+      .timeline { flex-direction: column; gap: 1rem; }
+      .timeline::before { display: none; }
+      .timeline-item { padding-top: 0; padding-left: 60px; text-align: left; }
+      .timeline-dot { left: 0; top: 0; transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div data-include="header"></div>
+
+<section class="hero-referidos">
+  <div class="hero-badge fade-up">💸 Programa de Referidos</div>
+  <h1 class="fade-up delay-1">Gana dinero real<br>recomendando <span>Wappti</span></h1>
+  <p class="fade-up delay-2">Comparte tu código, recibe comisiones en cada compra de recordatorios que hagan tus referidos. Sin límite de personas, sin fecha de vencimiento.</p>
+  <div class="hero-actions fade-up delay-3">
+    <a href="#como-funciona" class="btn btn-orange">Ver cómo funciona</a>
+    <a href="#comisiones" class="btn btn-outline-white">Ver comisiones →</a>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="stat">
+    <div class="stat-num">3x</div>
+    <div class="stat-label">Comisiones por referido</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">60%</div>
+    <div class="stat-label">Primera comisión</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">$10</div>
+    <div class="stat-label">Mínimo de cobro</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">∞</div>
+    <div class="stat-label">Referidos ilimitados</div>
+  </div>
+</div>
+
+<section class="section how" id="como-funciona">
+  <div style="text-align:center; margin-bottom: 1rem;">
+    <span class="section-label">Paso a paso</span>
+    <h2 class="section-title" style="margin: 0 auto;">¿Cómo funciona?</h2>
+    <p class="section-sub" style="margin: .8rem auto 0;">En cuatro pasos simples puedes empezar a ganar comisiones hoy mismo.</p>
+  </div>
+  <div class="steps-grid">
+    <div class="step-card fade-up">
+      <div class="step-num">01</div>
+      <h3>Obtén tu código</h3>
+      <p>Al crear tu cuenta en Wappti, se genera automáticamente un código de referido único e irrepetible vinculado a ti.</p>
+    </div>
+    <div class="step-card fade-up delay-1">
+      <div class="step-num">02</div>
+      <h3>Compártelo</h3>
+      <p>Envía tu código a amigos, colegas o seguidores. Ellos lo ingresan al registrarse o al realizar su primera compra.</p>
+    </div>
+    <div class="step-card fade-up delay-2">
+      <div class="step-num">03</div>
+      <h3>Ellos compran recordatorios</h3>
+      <p>Cada vez que tu referido compra un paquete de recordatorios (en promoción o precio normal), tú acumulas comisión.</p>
+    </div>
+    <div class="step-card fade-up delay-3">
+      <div class="step-num">04</div>
+      <h3>Cobras tu dinero</h3>
+      <p>Una vez acumulados $10 o más, solicitas tu pago. Lo procesamos en 24–48 horas hábiles.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section commissions" id="comisiones">
+  <span class="section-label">Estructura de pagos</span>
+  <h2 class="section-title">Tus comisiones</h2>
+  <p class="section-sub">Ganas comisión en las primeras 3 compras de recordatorios de cada persona que refieras. El porcentaje se calcula sobre el valor total de la compra, sin descuentos ni retenciones previas.</p>
+
+  <div class="commission-grid">
+    <div class="commission-card first fade-up">
+      <span class="commission-tag">🥇 Primera compra</span>
+      <div class="commission-pct">60%</div>
+      <div class="commission-label">Comisión más alta</div>
+      <div class="commission-desc">La primera compra suele ser la promoción de inicio. Es tu mayor ganancia por referido.</div>
+      <div class="commission-example">Ej: compra de $12 → tú ganas $7.20</div>
+    </div>
+    <div class="commission-card second fade-up delay-1">
+      <span class="commission-tag">🥈 Segunda compra</span>
+      <div class="commission-pct">30%</div>
+      <div class="commission-label">Comisión intermedia</div>
+      <div class="commission-desc">Cuando tu referido amplía su cuenta con más recordatorios, sigues ganando.</div>
+      <div class="commission-example">Ej: compra de $19 → tú ganas $5.70</div>
+    </div>
+    <div class="commission-card third fade-up delay-2">
+      <span class="commission-tag">🥉 Tercera compra</span>
+      <div class="commission-pct">15%</div>
+      <div class="commission-label">Comisión final</div>
+      <div class="commission-desc">La última comisión asociada a ese referido. A partir de la cuarta compra, no aplica más.</div>
+      <div class="commission-example">Ej: compra de $35 → tú ganas $5.25</div>
+    </div>
+  </div>
+
+  <div class="commission-note fade-up delay-3">
+    <div class="commission-note-icon">⚠️</div>
+    <p>
+      Las comisiones aplican <strong>únicamente sobre compras de paquetes de recordatorios</strong>, ya sea en precio de promoción o precio regular. <strong>No aplican sobre suscripciones mensuales ni anuales.</strong> El porcentaje se calcula sobre el valor bruto de la compra, sin deducciones previas.
+    </p>
+  </div>
+</section>
+
+<section class="section payments" id="pagos">
+  <span class="section-label">Cobro de comisiones</span>
+  <h2 class="section-title">¿Cuándo y cómo cobras?</h2>
+
+  <div class="payment-grid">
+    <div class="payment-card fade-up">
+      <h3>💳 Métodos de pago disponibles</h3>
+      <ul class="payment-list">
+        <li><span style="color: var(--teal); font-weight: 900;">✓</span> <strong>Binance Pay</strong> — disponible internacionalmente</li>
+        <li><span style="color: var(--teal); font-weight: 900;">✓</span> <strong>Banco Pichincha</strong> — disponible en Ecuador</li>
+      </ul>
+      <br>
+      <p style="font-size: .82rem; color: var(--muted); line-height:1.6;">Debes tener al menos <strong>$10.00 USD</strong> acumulados para solicitar un cobro. Los pagos inferiores a ese monto quedan retenidos hasta alcanzar el mínimo.</p>
+    </div>
+    <div class="payment-card fade-up delay-1">
+      <h3>⏱ Tiempos de procesamiento</h3>
+      <ul class="payment-list">
+        <li><span style="color: var(--orange); font-weight: 900;">✓</span> Si la última comisión se ganó hace <strong>más de 5 días</strong>: pago en <strong>24–48 horas hábiles</strong>.</li>
+        <li><span style="color: var(--orange); font-weight: 900;">✓</span> Si la última comisión es <strong>reciente (menos de 5 días)</strong>: se espera el período de 5 días.</li>
+        <li><span style="color: var(--orange); font-weight: 900;">✓</span> El período de espera existe para cubrir posibles reembolsos por parte del referido.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="timeline-block fade-up delay-2">
+    <div class="timeline-title">Ejemplo del ciclo de pago</div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot event">💰</div>
+        <div class="timeline-item-label">Comisión ganada</div>
+        <div class="timeline-item-sub">Tu referido compra recordatorios</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot wait">⏳</div>
+        <div class="timeline-item-label">Período de espera</div>
+        <div class="timeline-item-sub">Mínimo 5 días hábiles desde la última comisión</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot event">📋</div>
+        <div class="timeline-item-label">Solicitas cobro</div>
+        <div class="timeline-item-sub">Con saldo ≥ $10 en tu panel</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot pay">✅</div>
+        <div class="timeline-item-label">Pago procesado</div>
+        <div class="timeline-item-sub">24–48 horas hábiles si ya cumplió los 5 días</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section rules" id="reglas">
+  <span class="section-label">Condiciones del programa</span>
+  <h2 class="section-title">Reglas importantes</h2>
+  <p class="section-sub">El programa está diseñado para ser justo para todos. Aquí las condiciones que debes conocer.</p>
+
+  <div class="rules-grid">
+    <div class="rule-card fade-up">
+      <div class="rule-icon green">🎯</div>
+      <div>
+        <h4>Código vitalicio</h4>
+        <p>Tu código de referido no tiene fecha de vencimiento. Una vez asignado, es tuyo para siempre, sin importar cuánto tiempo pase.</p>
+      </div>
+    </div>
+    <div class="rule-card fade-up delay-1">
+      <div class="rule-icon green">♾️</div>
+      <div>
+        <h4>Referidos ilimitados</h4>
+        <p>No hay tope de personas que puedes referir. Puedes compartir tu código con cuantas personas desees sin ninguna restricción.</p>
+      </div>
+    </div>
+    <div class="rule-card fade-up delay-2">
+      <div class="rule-icon orange">🔄</div>
+      <div>
+        <h4>Reembolsos y descuentos</h4>
+        <p>Si un referido solicita reembolso, el valor de la comisión correspondiente se descontará de tu saldo pendiente o acumulado.</p>
+      </div>
+    </div>
+    <div class="rule-card fade-up">
+      <div class="rule-icon blue">📦</div>
+      <div>
+        <h4>Solo compras de recordatorios</h4>
+        <p>Las comisiones aplican exclusivamente sobre paquetes de recordatorios. Las suscripciones ($9.99 / $99.99) no generan comisión.</p>
+      </div>
+    </div>
+    <div class="rule-card fade-up delay-1">
+      <div class="rule-icon blue">💲</div>
+      <div>
+        <h4>Monto mínimo $10</h4>
+        <p>Debes acumular al menos $10 USD en comisiones para poder solicitar un retiro. El saldo no caduca.</p>
+      </div>
+    </div>
+    <div class="rule-card fade-up delay-2">
+      <div class="rule-icon red">🚫</div>
+      <div>
+        <h4>Uso honesto del código</h4>
+        <p>Queda prohibido el uso fraudulento del código (cuentas falsas, auto-referido). Wappti se reserva el derecho de cancelar comisiones.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="referido-bonus">
+  <h2>¿Qué gana el que usa tu código?</h2>
+  <p>Tu referido también se beneficia. Al usar tu código al registrarse, recibe el doble de recordatorios de bienvenida.</p>
+  <div class="bonus-pill fade-up">
+    <span>🎁</span>
+    <span>10 estándar → <strong>20 recordatorios</strong> con tu código</span>
+  </div>
+</section>
+
+<section class="section faq" id="faq-referidos">
+  <div style="text-align:center; margin-bottom: 1rem;">
+    <span class="section-label">Preguntas frecuentes</span>
+    <h2 class="section-title" style="margin: 0 auto;">Dudas comunes</h2>
+  </div>
+  <div class="faq-grid">
+    <div class="faq-item">
+      <h4>¿Dónde encuentro mi código de referido?</h4>
+      <p>En tu panel de Wappti, sección "Referidos". Tu código único está visible desde el momento en que creas tu cuenta.</p>
+    </div>
+    <div class="faq-item">
+      <h4>¿Puedo referirme a mí mismo con otra cuenta?</h4>
+      <p>No. El auto-referido está prohibido. El sistema detecta cuentas asociadas al mismo dispositivo o datos de pago y anula las comisiones.</p>
+    </div>
+    <div class="faq-item">
+      <h4>¿Qué pasa si mi referido cancela su suscripción?</h4>
+      <p>Las comisiones aplican solo sobre recordatorios, no sobre suscripciones. La cancelación de la suscripción no afecta tus comisiones previas.</p>
+    </div>
+    <div class="faq-item">
+      <h4>¿La cuarta compra de mi referido genera comisión?</h4>
+      <p>No. Las comisiones se aplican únicamente sobre las primeras 3 compras de recordatorios. A partir de la cuarta, no se generan más comisiones.</p>
+    </div>
+    <div class="faq-item">
+      <h4>¿Mi saldo de comisiones caduca?</h4>
+      <p>No. Tu saldo acumulado no tiene fecha de vencimiento. Puedes retirarlo cuando alcances el mínimo de $10, sin prisa.</p>
+    </div>
+    <div class="faq-item">
+      <h4>¿En qué moneda se pagan las comisiones?</h4>
+      <p>Todas las comisiones se calculan y pagan en <strong>USD</strong>, sin importar el método de pago que elijas (Binance o Banco Pichincha).</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final" id="empezar">
+  <h2>Empieza a ganar hoy mismo</h2>
+  <p>Tu código ya está esperándote. Compártelo y cobra comisiones reales.</p>
+  <a href="https://web.wappti.app/" class="btn btn-orange">Ir a mi panel de referidos →</a>
+</section>
+
+<div data-include="footer"></div>
+
+<script src="js/include.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

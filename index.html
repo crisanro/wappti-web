@@ -10,429 +10,411 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="css/styles.css">
-  </head>
+</head>
 <body>
-
-<!-- NAV -->
-<nav>
-  <a href="/" class="logo">
-    <img src="img/wappti.png" alt="Wappti Logo" style="height: 30px; width: auto; vertical-align: middle;">
-</a>
-  <div class="nav-links">
-    <a href="#ventajas">Ventajas</a>
-    <a href="#precios" class="active">Precio</a>
-    <a href="#faq">FAQ</a>
-  </div>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-text fade-up">
-    <p class="hero-tag">Todo en una sola app</p>
-    <h1>Agenda, controla, realiza recordatorios y confirma citas por WhatsApp</h1>
-    <p>Una agenda virtual que te permite llevar el control y registro de cada cita con tus clientes, ya deja de lado recordarles de manera manual cada cita, <strong>eso lo hacemos por ti</strong>.</p>
-    <div >
-      <a href="#descargar" class="btn btn-orange">⬇ Descargar</a>
-      <a href="https://web.wappti.app/" target="_blank" class="btn btn-outline-teal">🌐 Acceder</a>
+  <div data-include="header"></div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text fade-up">
+      <p class="hero-tag">Todo en una sola app</p>
+      <h1>Agenda, controla, realiza recordatorios y confirma citas por WhatsApp</h1>
+      <p>Una agenda virtual que te permite llevar el control y registro de cada cita con tus clientes, ya deja de lado recordarles de manera manual cada cita, <strong>eso lo hacemos por ti</strong>.</p>
+      <div >
+        <a href="#descargar" class="btn btn-orange"><i class="fas fa-download"></i> <span class="cta-text">Descargar</span></a>
+        <a href="https://web.wappti.app/" target="_blank" class="btn btn-outline-teal">🌐 Acceder</a>
+      </div>
     </div>
-  </div>
 
-  <div class="hero-img fade-up delay-2">
-    <div class="phone-wrap-v3">
+    <div class="hero-img fade-up delay-2">
+      <div class="phone-wrap-v3">
 
-    <svg class="phone-svg-v3" viewBox="0 0 340 680" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <!-- Degradado Premium Titanio para el cuerpo -->
-        <linearGradient id="titaniumGrad" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stop-color="#4A4A4C"/>
-          <stop offset="25%" stop-color="#242425"/>
-          <stop offset="75%" stop-color="#181819"/>
-          <stop offset="100%" stop-color="#000000"/>
-        </linearGradient>
-        
-        <!-- Degradado pantalla WhatsApp -->
-        <linearGradient id="waBg" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#0B141A"/>
-          <stop offset="100%" stop-color="#080F13"/>
-        </linearGradient>
-
-        <!-- Filtro de sombra suave para los mensajes (Doble capa para realismo) -->
-        <filter id="msgShadow" x="-20%" y="-20%" width="140%" height="140%">
-          <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.12"/>
-          <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#000" flood-opacity="0.08"/>
-        </filter>
-
-        <!-- ClipPath para esquinas perfectas de la pantalla -->
-        <clipPath id="screenClip">
-          <rect x="20" y="20" width="300" height="640" rx="38"/>
-        </clipPath>
-      </defs>
-
-      <!-- ================= CHASIS DEL TELÉFONO ================= -->
-      <!-- Borde exterior sutil -->
-      <rect x="11" y="11" width="318" height="658" rx="47" fill="#111"/>
-      <!-- Cuerpo Titanio -->
-      <rect x="12" y="12" width="316" height="656" rx="46" fill="url(#titaniumGrad)"/>
-      <!-- Highlight/Reflejo interior del chasis -->
-      <rect x="14" y="14" width="312" height="652" rx="44" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
-      <!-- Fondo de pantalla negro antes del clip -->
-      <rect x="20" y="20" width="300" height="640" rx="38" fill="#000"/>
-
-      <!-- Botones Laterales -->
-      <path d="M 10 160 h 2 v 32 h -2 z" fill="#333"/>
-      <path d="M 10 210 h 2 v 56 h -2 z" fill="#333"/>
-      <path d="M 10 280 h 2 v 56 h -2 z" fill="#333"/>
-      <path d="M 328 200 h 2 v 80 h -2 z" fill="#333"/>
-
-      <!-- ================= PANTALLA (CLIPPATH APLICADO) ================= -->
-      <g clip-path="url(#screenClip)">
-        
-        <!-- Background WhatsApp -->
-        <rect x="20" y="20" width="300" height="640" fill="url(#waBg)"/>
-        
-        <!-- Wallpaper Doodles (Patrón sutil simulado con opacidad muy baja) -->
-        <path d="M 40 100 Q 60 80 80 120 T 120 100" stroke="rgba(255,255,255,0.015)" stroke-width="2" fill="none"/>
-        <path d="M 200 300 Q 220 280 240 320 T 280 300" stroke="rgba(255,255,255,0.015)" stroke-width="2" fill="none"/>
-        <path d="M 50 450 Q 70 430 90 470 T 130 450" stroke="rgba(255,255,255,0.015)" stroke-width="2" fill="none"/>
-
-        <!-- ================= HEADER ================= -->
-        <rect x="20" y="20" width="300" height="96" fill="#202C33"/>
-        
-        <!-- Status Bar -->
-        <text class="svg-txt fw-bold" x="42" y="44" fill="white" font-size="13">9:41</text>
-        <rect x="264" y="34" width="18" height="10" rx="2" fill="none" stroke="white" stroke-width="1"/>
-        <rect x="266" y="36" width="14" height="6" rx="1" fill="white"/>
-        <!-- Dynamic Island -->
-        <rect x="115" y="30" width="110" height="26" rx="13" fill="#000"/>
-
-        <!-- Contact Info -->
-        <path d="M 36 84 l -7 -7 l 7 -7" stroke="rgba(255,255,255,0.7)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="74" cy="77" r="18" fill="#128C7E"/>
-        <text class="svg-txt fw-black" x="74" y="82" text-anchor="middle" fill="white" font-size="14">W</text>
-        
-        <text class="svg-txt fw-bold" x="104" y="73" fill="white" font-size="14">Wappti</text>
-        <text class="svg-txt fw-medium" x="104" y="88" fill="rgba(255,255,255,0.6)" font-size="11">en línea</text>
-
-        <!-- Video/Call -->
-        <path d="M 250 71 h 14 v 10 h -14 z m 14 2 l 4 -2 v 10 l -4 -2" fill="rgba(255,255,255,0.8)"/>
-        <path d="M 288 71 a 6 6 0 0 1 6 6 a 6 6 0 0 1 -6 6 h -4 a 6 6 0 0 1 -6 -6 v -6 z" fill="rgba(255,255,255,0.8)"/>
-
-        <!-- ================= CHAT ÁREA ================= -->
-        <!-- Fecha -->
-        <rect x="136" y="132" width="68" height="24" rx="12" fill="#182229" filter="url(#msgShadow)"/>
-        <text class="svg-txt fw-medium" x="170" y="148" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="11">Hoy</text>
-
-        <!-- MSG 1: Tarjeta API Interactiva -->
-        <g class="wa-msg wa-msg-1" filter="url(#msgShadow)">
-          <!-- Cuerpo principal (Top rounded, bottom square) -->
-          <path d="M 30 190 A 14 14 0 0 1 44 176 H 266 A 14 14 0 0 1 280 190 V 290 H 30 Z" fill="#202C33"/>
-          <!-- Colita perfecta en SVG -->
-          <path d="M 30 176 L 22 176 L 30 184 Z" fill="#202C33"/>
-
-          <!-- Header / Recordatorio -->
-          <text class="svg-txt fw-black" x="46" y="200" fill="#25D366" font-size="12">🗓 Recordatorio de cita</text>
+      <svg class="phone-svg-v3" viewBox="0 0 340 680" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <!-- Degradado Premium Titanio para el cuerpo -->
+          <linearGradient id="titaniumGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#4A4A4C"/>
+            <stop offset="25%" stop-color="#242425"/>
+            <stop offset="75%" stop-color="#181819"/>
+            <stop offset="100%" stop-color="#000000"/>
+          </linearGradient>
           
-          <!-- Texto del mensaje -->
-          <text class="svg-txt" x="46" y="222" fill="rgba(255,255,255,0.95)" font-size="13">Hola María 👋 Te recordamos</text>
-          <text class="svg-txt" x="46" y="240" fill="rgba(255,255,255,0.95)" font-size="13">tu cita programada para mañana:</text>
-          
-          <!-- Box Interno Datos -->
-          <rect x="42" y="250" width="226" height="32" rx="6" fill="#111B21"/>
-          <text class="svg-txt fw-bold" x="52" y="270" fill="rgba(255,255,255,0.95)" font-size="12">📅 Mar 22 · 10:00 AM</text>
-          
-          <!-- Hora del mensaje -->
-          <text class="svg-txt" x="270" y="282" text-anchor="end" fill="rgba(255,255,255,0.4)" font-size="10">10:42</text>
+          <!-- Degradado pantalla WhatsApp -->
+          <linearGradient id="waBg" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#0B141A"/>
+            <stop offset="100%" stop-color="#080F13"/>
+          </linearGradient>
 
-          <!-- Botón 1 -->
-          <rect x="30" y="291" width="250" height="38" fill="#202C33"/>
-          <text class="svg-txt fw-bold" x="155" y="315" text-anchor="middle" fill="#53bdeb" font-size="13">Confirmar asistencia</text>
+          <!-- Filtro de sombra suave para los mensajes (Doble capa para realismo) -->
+          <filter id="msgShadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.12"/>
+            <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#000" flood-opacity="0.08"/>
+          </filter>
+
+          <!-- ClipPath para esquinas perfectas de la pantalla -->
+          <clipPath id="screenClip">
+            <rect x="20" y="20" width="300" height="640" rx="38"/>
+          </clipPath>
+        </defs>
+
+        <!-- ================= CHASIS DEL TELÉFONO ================= -->
+        <!-- Borde exterior sutil -->
+        <rect x="11" y="11" width="318" height="658" rx="47" fill="#111"/>
+        <!-- Cuerpo Titanio -->
+        <rect x="12" y="12" width="316" height="656" rx="46" fill="url(#titaniumGrad)"/>
+        <!-- Highlight/Reflejo interior del chasis -->
+        <rect x="14" y="14" width="312" height="652" rx="44" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+        <!-- Fondo de pantalla negro antes del clip -->
+        <rect x="20" y="20" width="300" height="640" rx="38" fill="#000"/>
+
+        <!-- Botones Laterales -->
+        <path d="M 10 160 h 2 v 32 h -2 z" fill="#333"/>
+        <path d="M 10 210 h 2 v 56 h -2 z" fill="#333"/>
+        <path d="M 10 280 h 2 v 56 h -2 z" fill="#333"/>
+        <path d="M 328 200 h 2 v 80 h -2 z" fill="#333"/>
+
+        <!-- ================= PANTALLA (CLIPPATH APLICADO) ================= -->
+        <g clip-path="url(#screenClip)">
           
-          <!-- Línea Separadora 1 -->
-          <line x1="30" y1="330" x2="280" y2="330" stroke="#2B3A43" stroke-width="1"/>
+          <!-- Background WhatsApp -->
+          <rect x="20" y="20" width="300" height="640" fill="url(#waBg)"/>
           
-          <!-- Botón 2 -->
-          <rect x="30" y="331" width="250" height="38" fill="#202C33"/>
-          <text class="svg-txt fw-bold" x="155" y="355" text-anchor="middle" fill="#53bdeb" font-size="13">Reagendar cita</text>
+          <!-- Wallpaper Doodles (Patrón sutil simulado con opacidad muy baja) -->
+          <path d="M 40 100 Q 60 80 80 120 T 120 100" stroke="rgba(255,255,255,0.015)" stroke-width="2" fill="none"/>
+          <path d="M 200 300 Q 220 280 240 320 T 280 300" stroke="rgba(255,255,255,0.015)" stroke-width="2" fill="none"/>
+          <path d="M 50 450 Q 70 430 90 470 T 130 450" stroke="rgba(255,255,255,0.015)" stroke-width="2" fill="none"/>
+
+          <!-- ================= HEADER ================= -->
+          <rect x="20" y="20" width="300" height="96" fill="#202C33"/>
           
-          <!-- Línea Separadora 2 -->
-          <line x1="30" y1="370" x2="280" y2="370" stroke="#2B3A43" stroke-width="1"/>
+          <!-- Status Bar -->
+          <text class="svg-txt fw-bold" x="42" y="44" fill="white" font-size="13">9:41</text>
+          <rect x="264" y="34" width="18" height="10" rx="2" fill="none" stroke="white" stroke-width="1"/>
+          <rect x="266" y="36" width="14" height="6" rx="1" fill="white"/>
+          <!-- Dynamic Island -->
+          <rect x="115" y="30" width="110" height="26" rx="13" fill="#000"/>
+
+          <!-- Contact Info -->
+          <path d="M 36 84 l -7 -7 l 7 -7" stroke="rgba(255,255,255,0.7)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="74" cy="77" r="18" fill="#128C7E"/>
+          <text class="svg-txt fw-black" x="74" y="82" text-anchor="middle" fill="white" font-size="14">W</text>
           
-          <!-- Botón 3 (Bottom rounded) -->
-          <path d="M 30 371 H 280 V 395 A 14 14 0 0 1 266 409 H 44 A 14 14 0 0 1 30 395 Z" fill="#202C33"/>
-          <text class="svg-txt fw-bold" x="155" y="395" text-anchor="middle" fill="#53bdeb" font-size="13">Cancelar cita</text>
+          <text class="svg-txt fw-bold" x="104" y="73" fill="white" font-size="14">Wappti</text>
+          <text class="svg-txt fw-medium" x="104" y="88" fill="rgba(255,255,255,0.6)" font-size="11">en línea</text>
+
+          <!-- Video/Call -->
+          <path d="M 250 71 h 14 v 10 h -14 z m 14 2 l 4 -2 v 10 l -4 -2" fill="rgba(255,255,255,0.8)"/>
+          <path d="M 288 71 a 6 6 0 0 1 6 6 a 6 6 0 0 1 -6 6 h -4 a 6 6 0 0 1 -6 -6 v -6 z" fill="rgba(255,255,255,0.8)"/>
+
+          <!-- ================= CHAT ÁREA ================= -->
+          <!-- Fecha -->
+          <rect x="136" y="132" width="68" height="24" rx="12" fill="#182229" filter="url(#msgShadow)"/>
+          <text class="svg-txt fw-medium" x="170" y="148" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="11">Hoy</text>
+
+          <!-- MSG 1: Tarjeta API Interactiva -->
+          <g class="wa-msg wa-msg-1" filter="url(#msgShadow)">
+            <!-- Cuerpo principal (Top rounded, bottom square) -->
+            <path d="M 30 190 A 14 14 0 0 1 44 176 H 266 A 14 14 0 0 1 280 190 V 290 H 30 Z" fill="#202C33"/>
+            <!-- Colita perfecta en SVG -->
+            <path d="M 30 176 L 22 176 L 30 184 Z" fill="#202C33"/>
+
+            <!-- Header / Recordatorio -->
+            <text class="svg-txt fw-black" x="46" y="200" fill="#25D366" font-size="12">🗓 Recordatorio de cita</text>
+            
+            <!-- Texto del mensaje -->
+            <text class="svg-txt" x="46" y="222" fill="rgba(255,255,255,0.95)" font-size="13">Hola María 👋 Te recordamos</text>
+            <text class="svg-txt" x="46" y="240" fill="rgba(255,255,255,0.95)" font-size="13">tu cita programada para mañana:</text>
+            
+            <!-- Box Interno Datos -->
+            <rect x="42" y="250" width="226" height="32" rx="6" fill="#111B21"/>
+            <text class="svg-txt fw-bold" x="52" y="270" fill="rgba(255,255,255,0.95)" font-size="12">📅 Mar 22 · 10:00 AM</text>
+            
+            <!-- Hora del mensaje -->
+            <text class="svg-txt" x="270" y="282" text-anchor="end" fill="rgba(255,255,255,0.4)" font-size="10">10:42</text>
+
+            <!-- Botón 1 -->
+            <rect x="30" y="291" width="250" height="38" fill="#202C33"/>
+            <text class="svg-txt fw-bold" x="155" y="315" text-anchor="middle" fill="#53bdeb" font-size="13">Confirmar asistencia</text>
+            
+            <!-- Línea Separadora 1 -->
+            <line x1="30" y1="330" x2="280" y2="330" stroke="#2B3A43" stroke-width="1"/>
+            
+            <!-- Botón 2 -->
+            <rect x="30" y="331" width="250" height="38" fill="#202C33"/>
+            <text class="svg-txt fw-bold" x="155" y="355" text-anchor="middle" fill="#53bdeb" font-size="13">Reagendar cita</text>
+            
+            <!-- Línea Separadora 2 -->
+            <line x1="30" y1="370" x2="280" y2="370" stroke="#2B3A43" stroke-width="1"/>
+            
+            <!-- Botón 3 (Bottom rounded) -->
+            <path d="M 30 371 H 280 V 395 A 14 14 0 0 1 266 409 H 44 A 14 14 0 0 1 30 395 Z" fill="#202C33"/>
+            <text class="svg-txt fw-bold" x="155" y="395" text-anchor="middle" fill="#53bdeb" font-size="13">Cancelar cita</text>
+          </g>
+
+          <!-- MSG 2: Respuesta Usuario -->
+          <g class="wa-msg out wa-msg-2" filter="url(#msgShadow)">
+            <!-- Burbuja verde -->
+            <path d="M 130 432 A 14 14 0 0 1 144 418 H 310 V 442 A 14 14 0 0 1 296 456 H 130 Z" fill="#005C4B"/>
+            <!-- Colita derecha -->
+            <path d="M 310 418 L 318 418 L 310 426 Z" fill="#005C4B"/>
+            
+            <text class="svg-txt fw-medium" x="142" y="440" fill="rgba(255,255,255,0.95)" font-size="13">Confirmar asistencia</text>
+            
+            <!-- Hora y Checks -->
+            <text class="svg-txt" x="275" y="448" text-anchor="end" fill="rgba(255,255,255,0.6)" font-size="10">10:43</text>
+            <path d="M 280 442 l 3 4 l 6 -6 m -3 6 l 6 -6" fill="none" stroke="#53bdeb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+
+          <!-- MSG 3: Confirmación Final -->
+          <g class="wa-msg wa-msg-3" filter="url(#msgShadow)">
+            <path d="M 30 484 A 14 14 0 0 1 44 470 H 216 A 14 14 0 0 1 230 484 V 506 A 14 14 0 0 1 216 520 H 44 A 14 14 0 0 1 30 506 Z" fill="#202C33"/>
+            <!-- Colita izquierda -->
+            <path d="M 30 470 L 22 470 L 30 478 Z" fill="#202C33"/>
+            
+            <text class="svg-txt" x="42" y="492" fill="rgba(255,255,255,0.95)" font-size="13">¡Perfecto! 🎉 Tu cita está</text>
+            <text class="svg-txt" x="42" y="510" fill="rgba(255,255,255,0.95)" font-size="13">confirmada. ¡Te esperamos!</text>
+            
+            <text class="svg-txt" x="220" y="514" text-anchor="end" fill="rgba(255,255,255,0.4)" font-size="10">10:43</text>
+          </g>
+
+          <!-- ================= INPUT DE MENSAJE ================= -->
+          <rect x="20" y="580" width="300" height="60" fill="#202C33"/>
+          <line x1="20" y1="580" x2="320" y2="580" stroke="#111B21" stroke-width="2"/>
+          
+          <!-- Input Box -->
+          <rect x="30" y="588" width="234" height="42" rx="21" fill="#2A3942"/>
+          
+          <!-- Emoji -->
+          <circle cx="50" cy="609" r="8" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.8"/>
+          <path d="M 46 607 v 1 m 8 -1 v 1 m -6 3 a 4 3 0 0 0 6 0" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+          
+          <text class="svg-txt" x="72" y="614" fill="rgba(255,255,255,0.4)" font-size="14">Mensaje</text>
+          
+          <!-- Mic Botón -->
+          <circle cx="292" cy="609" r="18" fill="#00A884"/>
+          <path d="M 292 600 v 8 m -5 -8 a 5 5 0 0 1 10 0 v 3 a 5 5 0 0 1 -10 0 m -2 3 a 7 7 0 0 0 14 0" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
         </g>
+        <!-- ================= FIN PANTALLA ================= -->
 
-        <!-- MSG 2: Respuesta Usuario -->
-        <g class="wa-msg out wa-msg-2" filter="url(#msgShadow)">
-          <!-- Burbuja verde -->
-          <path d="M 130 432 A 14 14 0 0 1 144 418 H 310 V 442 A 14 14 0 0 1 296 456 H 130 Z" fill="#005C4B"/>
-          <!-- Colita derecha -->
-          <path d="M 310 418 L 318 418 L 310 426 Z" fill="#005C4B"/>
-          
-          <text class="svg-txt fw-medium" x="142" y="440" fill="rgba(255,255,255,0.95)" font-size="13">Confirmar asistencia</text>
-          
-          <!-- Hora y Checks -->
-          <text class="svg-txt" x="275" y="448" text-anchor="end" fill="rgba(255,255,255,0.6)" font-size="10">10:43</text>
-          <path d="M 280 442 l 3 4 l 6 -6 m -3 6 l 6 -6" fill="none" stroke="#53bdeb" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </g>
+        <!-- Reflejo Glass Superior para realismo de pantalla -->
+        <path d="M 20 20 h 300 v 150 L 20 250 Z" fill="url(#waBg)" opacity="0.03" pointer-events="none" clip-path="url(#screenClip)"/>
 
-        <!-- MSG 3: Confirmación Final -->
-        <g class="wa-msg wa-msg-3" filter="url(#msgShadow)">
-          <path d="M 30 484 A 14 14 0 0 1 44 470 H 216 A 14 14 0 0 1 230 484 V 506 A 14 14 0 0 1 216 520 H 44 A 14 14 0 0 1 30 506 Z" fill="#202C33"/>
-          <!-- Colita izquierda -->
-          <path d="M 30 470 L 22 470 L 30 478 Z" fill="#202C33"/>
-          
-          <text class="svg-txt" x="42" y="492" fill="rgba(255,255,255,0.95)" font-size="13">¡Perfecto! 🎉 Tu cita está</text>
-          <text class="svg-txt" x="42" y="510" fill="rgba(255,255,255,0.95)" font-size="13">confirmada. ¡Te esperamos!</text>
-          
-          <text class="svg-txt" x="220" y="514" text-anchor="end" fill="rgba(255,255,255,0.4)" font-size="10">10:43</text>
-        </g>
+      </svg>
 
-        <!-- ================= INPUT DE MENSAJE ================= -->
-        <rect x="20" y="580" width="300" height="60" fill="#202C33"/>
-        <line x1="20" y1="580" x2="320" y2="580" stroke="#111B21" stroke-width="2"/>
+      <!-- Badge flotante 1 -->
+      <div class="stat-pill stat-pill--tr">
+        <div class="stat-pill__icon" style="background:rgba(74, 222, 128, 0.15); color: #4ade80; border: 1px solid rgba(74, 222, 128, 0.3);">📉</div>
+        <div>
+          <strong>–68%</strong>
+          <span>Olvidos</span>
+        </div>
+      </div>
+
+      <!-- Badge flotante 2 -->
+      <div class="stat-pill stat-pill--bl">
+        <div class="stat-pill__icon" style="background:rgba(83, 189, 235, 0.15); color: #53bdeb; border: 1px solid rgba(83, 189, 235, 0.3);">⚡</div>
+        <div>
+          <strong>Automático</strong>
+          <span>sin intervención</span>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARA QUIÉN -->
+  <section class="para-quien" id="descargar">
+    <div class="para-quien-grid">
+      <div class="para-quien-left fade-up">
+        <p class="label">¿Para quién es?</p>
+        <h2>Diseñado para profesiones que dependen de citas</h2>
+        <p>Confirma asistencia. Elimina los no-shows. Cargamos las citas de tu agenda y confirmamos a tus clientes. Todo automáticamente, empieza en minutos.</p>
+      </div>
+      <div class="profesiones-col fade-up delay-1">
+        <div class="prof-item">Clínicas médicas y doctores</div>
+        <div class="prof-item">Psicólogos y terapeutas</div>
+        <div class="prof-item">Odontólogos</div>
+        <div class="prof-item">Veterinarios y cuidados de mascotas</div>
+        <div class="prof-item">Entrenadores personales</div>
+        <div class="prof-item">Abogados</div>
+      </div>
+      <div class="profesiones-col fade-up delay-2">
+        <div class="prof-item">Salones de belleza</div>
+        <div class="prof-item">Servicio a autos y motos</div>
+        <div class="prof-item">Profesores particulares</div>
+        <div class="prof-item">Nutricionistas</div>
+        <div class="prof-item">Tatuadores y artistas de piercing</div>
+        <div class="prof-item">y más...</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <div class="cta-band">
+    <h2>Descargar la app</h2>
+    <div class="cta-band-btns">
+      <a href="https://play.google.com/store/apps/details?id=com.androga.wappti&pcampaignid=web_share" class="store-btn">
+        <i class="fab fa-google-play"></i>
+        <div class="store-btn-text"><small>Disponible en</small><strong>Play Store</strong></div>
+      </a>
+      <a href="https://apps.apple.com/us/app/wappti-agenda-de-clientes/id6447773916" class="store-btn">
+        <i class="fab fa-apple"></i>
+        <div class="store-btn-text"><small>Disponible en</small><strong>App Store</strong></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- VENTAJAS -->
+  <section class="ventajas" id="ventajas">
+    <h2>Ventajas de utilizar Wappti</h2>
+    <div class="ventajas-grid">
+      <div class="accordion">
+        <div class="accordion-item">
+          <div class="accordion-title active" onclick="toggleAccordion(this)">
+            <span class="icon">−</span> Ahorra tiempo
+          </div>
+          <div class="accordion-body open">
+            ¿Actualmente confirmas a tus clientes manualmente? ¿Los llamas o les escribes uno a uno? Deja que Wappti haga eso por ti.
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-title" onclick="toggleAccordion(this)">
+            <span class="icon">+</span> Fácil acceso a la información
+          </div>
+          <div class="accordion-body">
+            Consulta el historial de citas, estados y confirmaciones desde cualquier dispositivo en tiempo real.
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-title" onclick="toggleAccordion(this)">
+            <span class="icon">+</span> Aumenta la productividad
+          </div>
+          <div class="accordion-body">
+            Automatiza los recordatorios y dedica tu tiempo a lo que realmente importa: atender a tus clientes.
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-title" onclick="toggleAccordion(this)">
+            <span class="icon">+</span> Todo en un solo lugar
+          </div>
+          <div class="accordion-body">
+            Agenda, clientes, recordatorios y confirmaciones, todo centralizado en una sola aplicación.
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-title" onclick="toggleAccordion(this)">
+            <span class="icon">+</span> Incrementa tus ingresos
+          </div>
+          <div class="accordion-body">
+            Menos no-shows significa más citas completadas y más dinero en tu bolsillo al final del mes.
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-title" onclick="toggleAccordion(this)">
+            <span class="icon">+</span> Mejora tu imagen como marca
+          </div>
+          <div class="accordion-body">
+            Tus clientes perciben profesionalismo cuando reciben recordatorios automáticos y puntuales.
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-title" onclick="toggleAccordion(this)">
+            <span class="icon">+</span> Que ningún cliente se te olvide
+          </div>
+          <div class="accordion-body">
+            Wappti te avisa y avisa a tus clientes, así nunca más perderás una cita por olvido.
+          </div>
+        </div>
+      </div>
+
+      <div class="phones-duo">
+        <div class="phone-small"><div class="phone-small-screen"></div></div>
+        <div class="phone-small"><div class="phone-small-screen"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section class="testimonios">
+    <h2>Lo que dicen nuestros usuarios</h2>
+    <div class="testimonios-grid" id="reviews-container" style="min-height: 200px;">
+      <p>Cargando opiniones...</p> 
+    </div>
+  </section>
+
+  <!-- PRECIOS -->
+  <section class="precios" id="precios">
+    <div class="precios-card">
+      <h2>Gestión de citas</h2>
+      <div class="precios-grid">
+        <div class="precio-item"><span class="gestiones">0 Gestiones</span><span class="gratis">Gratis</span></div>
+        <div class="precio-item"><span class="gestiones">+ 50 Gestiones</span><span class="precio">$12</span></div>
+        <div class="precio-item"><span class="gestiones">+ 100 Gestiones</span><span class="precio">$19</span></div>
+        <div class="precio-item"><span class="gestiones">+ 200 Gestiones</span><span class="precio">$35</span></div>
+        <div class="precio-item"><span class="gestiones">+ 300 Gestiones</span><span class="precio">$48</span></div>
+        <div class="precio-item"><span class="gestiones">+ 400 Gestiones</span><span class="precio">$55</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section" id="faq">
+    <h2 class="faq-section__title">Preguntas frecuentes</h2>
+    <div class="faq-section__grid">
+
+      <div class="faq-section__col">
+        <div class="faq-section__item">
+          <div class="faq-section__question">
+            <span class="faq-section__icon">▲</span> ¿Es una aplicación gratuita?
+          </div>
+          <div class="faq-section__answer">
+            Sí, tienes la mayoría de funciones disponibles de forma completamente gratis.
+          </div>
+        </div>
+
+        <div class="faq-section__item">
+          <div class="faq-section__question">
+            <span class="faq-section__icon">▲</span> ¿Usan mi número de WhatsApp?
+          </div>
+          <div class="faq-section__answer">
+            No. En este caso utilizamos nuestro propio número para evitar así que pierdas tu número al empezar a utilizarlo mediante API.
+          </div>
+        </div>
         
-        <!-- Input Box -->
-        <rect x="30" y="588" width="234" height="42" rx="21" fill="#2A3942"/>
-        
-        <!-- Emoji -->
-        <circle cx="50" cy="609" r="8" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.8"/>
-        <path d="M 46 607 v 1 m 8 -1 v 1 m -6 3 a 4 3 0 0 0 6 0" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/>
-        
-        <text class="svg-txt" x="72" y="614" fill="rgba(255,255,255,0.4)" font-size="14">Mensaje</text>
-        
-        <!-- Mic Botón -->
-        <circle cx="292" cy="609" r="18" fill="#00A884"/>
-        <path d="M 292 600 v 8 m -5 -8 a 5 5 0 0 1 10 0 v 3 a 5 5 0 0 1 -10 0 m -2 3 a 7 7 0 0 0 14 0" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
-      </g>
-      <!-- ================= FIN PANTALLA ================= -->
-
-      <!-- Reflejo Glass Superior para realismo de pantalla -->
-      <path d="M 20 20 h 300 v 150 L 20 250 Z" fill="url(#waBg)" opacity="0.03" pointer-events="none" clip-path="url(#screenClip)"/>
-
-    </svg>
-
-    <!-- Badge flotante 1 -->
-    <div class="stat-pill stat-pill--tr">
-      <div class="stat-pill__icon" style="background:rgba(74, 222, 128, 0.15); color: #4ade80; border: 1px solid rgba(74, 222, 128, 0.3);">📉</div>
-      <div>
-        <strong>–68%</strong>
-        <span>Olvidos</span>
+        <div class="faq-section__item">
+          <div class="faq-section__question">
+            <span class="faq-section__icon">▲</span> ¿Qué es una gestión de cita?
+          </div>
+          <div class="faq-section__answer">
+            Es un soporte adicional que realizamos por ti para evitar que tu cliente olvide que posee esa reunión contigo.
+          </div>
+        </div>
       </div>
+
+      <div class="faq-section__col">
+        <div class="faq-section__item">
+          <div class="faq-section__question">
+            <span class="faq-section__icon">▲</span> ¿Cómo solicito un reembolso?
+          </div>
+          <div class="faq-section__answer">
+            No solemos dar un reembolso, pero siempre habrá situaciones necesarias. Contacta a soporte desde la aplicación.
+          </div>
+        </div>
+
+        <div class="faq-section__item">
+          <div class="faq-section__question">
+            <span class="faq-section__icon">▲</span> ¿Cómo envían los mensajes?
+          </div>
+          <div class="faq-section__answer">
+            Utilizamos la API de WhatsApp que es un servicio oficial de Meta, evitando el SPAM.
+          </div>
+        </div>
+      </div>
+
     </div>
+  </section>
 
-    <!-- Badge flotante 2 -->
-    <div class="stat-pill stat-pill--bl">
-      <div class="stat-pill__icon" style="background:rgba(83, 189, 235, 0.15); color: #53bdeb; border: 1px solid rgba(83, 189, 235, 0.3);">⚡</div>
-      <div>
-        <strong>Automático</strong>
-        <span>sin intervención</span>
-      </div>
-    </div>
-    </div>
-  </div>
-</section>
+  <div data-include="footer"></div>
 
-<!-- PARA QUIÉN -->
-<section class="para-quien" id="descargar">
-  <div class="para-quien-grid">
-    <div class="para-quien-left fade-up">
-      <p class="label">¿Para quién es?</p>
-      <h2>Diseñado para profesiones que dependen de citas</h2>
-      <p>Confirma asistencia. Elimina los no-shows. Cargamos las citas de tu agenda y confirmamos a tus clientes. Todo automáticamente, empieza en minutos.</p>
-    </div>
-    <div class="profesiones-col fade-up delay-1">
-      <div class="prof-item">Clínicas médicas y doctores</div>
-      <div class="prof-item">Psicólogos y terapeutas</div>
-      <div class="prof-item">Odontólogos</div>
-      <div class="prof-item">Veterinarios y cuidados de mascotas</div>
-      <div class="prof-item">Entrenadores personales</div>
-      <div class="prof-item">Abogados</div>
-    </div>
-    <div class="profesiones-col fade-up delay-2">
-      <div class="prof-item">Salones de belleza</div>
-      <div class="prof-item">Servicio a autos y motos</div>
-      <div class="prof-item">Profesores particulares</div>
-      <div class="prof-item">Nutricionistas</div>
-      <div class="prof-item">Tatuadores y artistas de piercing</div>
-      <div class="prof-item">y más...</div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA BAND -->
-<div class="cta-band">
-  <h2>Descargar la app</h2>
-  <div class="cta-band-btns">
-    <a href="https://play.google.com/store/apps/details?id=com.androga.wappti&pcampaignid=web_share" class="store-btn">
-      <i class="fab fa-google-play"></i>
-      <div class="store-btn-text"><small>Disponible en</small><strong>Play Store</strong></div>
-    </a>
-    <a href="https://apps.apple.com/us/app/wappti-agenda-de-clientes/id6447773916" class="store-btn">
-      <i class="fab fa-apple"></i>
-      <div class="store-btn-text"><small>Disponible en</small><strong>App Store</strong></div>
-    </a>
-  </div>
-</div>
-
-<!-- VENTAJAS -->
-<section class="ventajas" id="ventajas">
-  <h2>Ventajas de utilizar Wappti</h2>
-  <div class="ventajas-grid">
-    <div class="accordion">
-      <div class="accordion-item">
-        <div class="accordion-title active" onclick="toggleAccordion(this)">
-          <span class="icon">−</span> Ahorra tiempo
-        </div>
-        <div class="accordion-body open">
-          ¿Actualmente confirmas a tus clientes manualmente? ¿Los llamas o les escribes uno a uno? Deja que Wappti haga eso por ti.
-        </div>
-      </div>
-      <div class="accordion-item">
-        <div class="accordion-title" onclick="toggleAccordion(this)">
-          <span class="icon">+</span> Fácil acceso a la información
-        </div>
-        <div class="accordion-body">
-          Consulta el historial de citas, estados y confirmaciones desde cualquier dispositivo en tiempo real.
-        </div>
-      </div>
-      <div class="accordion-item">
-        <div class="accordion-title" onclick="toggleAccordion(this)">
-          <span class="icon">+</span> Aumenta la productividad
-        </div>
-        <div class="accordion-body">
-          Automatiza los recordatorios y dedica tu tiempo a lo que realmente importa: atender a tus clientes.
-        </div>
-      </div>
-      <div class="accordion-item">
-        <div class="accordion-title" onclick="toggleAccordion(this)">
-          <span class="icon">+</span> Todo en un solo lugar
-        </div>
-        <div class="accordion-body">
-          Agenda, clientes, recordatorios y confirmaciones, todo centralizado en una sola aplicación.
-        </div>
-      </div>
-      <div class="accordion-item">
-        <div class="accordion-title" onclick="toggleAccordion(this)">
-          <span class="icon">+</span> Incrementa tus ingresos
-        </div>
-        <div class="accordion-body">
-          Menos no-shows significa más citas completadas y más dinero en tu bolsillo al final del mes.
-        </div>
-      </div>
-      <div class="accordion-item">
-        <div class="accordion-title" onclick="toggleAccordion(this)">
-          <span class="icon">+</span> Mejora tu imagen como marca
-        </div>
-        <div class="accordion-body">
-          Tus clientes perciben profesionalismo cuando reciben recordatorios automáticos y puntuales.
-        </div>
-      </div>
-      <div class="accordion-item">
-        <div class="accordion-title" onclick="toggleAccordion(this)">
-          <span class="icon">+</span> Que ningún cliente se te olvide
-        </div>
-        <div class="accordion-body">
-          Wappti te avisa y avisa a tus clientes, así nunca más perderás una cita por olvido.
-        </div>
-      </div>
-    </div>
-
-    <div class="phones-duo">
-      <div class="phone-small"><div class="phone-small-screen"></div></div>
-      <div class="phone-small"><div class="phone-small-screen"></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIOS -->
-<section class="testimonios">
-  <h2>Lo que dicen nuestros usuarios</h2>
-  <div class="testimonios-grid" id="reviews-container" style="min-height: 200px;">
-    <p>Cargando opiniones...</p> 
-  </div>
-</section>
-
-<!-- PRECIOS -->
-<section class="precios" id="precios">
-  <div class="precios-card">
-    <h2>Gestión de citas</h2>
-    <div class="precios-grid">
-      <div class="precio-item"><span class="gestiones">0 Gestiones</span><span class="gratis">Gratis</span></div>
-      <div class="precio-item"><span class="gestiones">+ 50 Gestiones</span><span class="precio">$12</span></div>
-      <div class="precio-item"><span class="gestiones">+ 100 Gestiones</span><span class="precio">$19</span></div>
-      <div class="precio-item"><span class="gestiones">+ 200 Gestiones</span><span class="precio">$35</span></div>
-      <div class="precio-item"><span class="gestiones">+ 300 Gestiones</span><span class="precio">$48</span></div>
-      <div class="precio-item"><span class="gestiones">+ 400 Gestiones</span><span class="precio">$55</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="faq-section" id="faq">
-  <h2 class="faq-section__title">Preguntas frecuentes</h2>
-  <div class="faq-section__grid">
-
-    <div class="faq-section__col">
-      <div class="faq-section__item">
-        <div class="faq-section__question">
-          <span class="faq-section__icon">▲</span> ¿Es una aplicación gratuita?
-        </div>
-        <div class="faq-section__answer">
-          Sí, tienes la mayoría de funciones disponibles de forma completamente gratis.
-        </div>
-      </div>
-
-      <div class="faq-section__item">
-        <div class="faq-section__question">
-          <span class="faq-section__icon">▲</span> ¿Usan mi número de WhatsApp?
-        </div>
-        <div class="faq-section__answer">
-          No. En este caso utilizamos nuestro propio número para evitar así que pierdas tu número al empezar a utilizarlo mediante API.
-        </div>
-      </div>
-      
-      <div class="faq-section__item">
-        <div class="faq-section__question">
-          <span class="faq-section__icon">▲</span> ¿Qué es una gestión de cita?
-        </div>
-        <div class="faq-section__answer">
-          Es un soporte adicional que realizamos por ti para evitar que tu cliente olvide que posee esa reunión contigo.
-        </div>
-      </div>
-    </div>
-
-    <div class="faq-section__col">
-      <div class="faq-section__item">
-        <div class="faq-section__question">
-          <span class="faq-section__icon">▲</span> ¿Cómo solicito un reembolso?
-        </div>
-        <div class="faq-section__answer">
-          No solemos dar un reembolso, pero siempre habrá situaciones necesarias. Contacta a soporte desde la aplicación.
-        </div>
-      </div>
-
-      <div class="faq-section__item">
-        <div class="faq-section__question">
-          <span class="faq-section__icon">▲</span> ¿Cómo envían los mensajes?
-        </div>
-        <div class="faq-section__answer">
-          Utilizamos la API de WhatsApp que es un servicio oficial de Meta, evitando el SPAM.
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <span class="footer-logo" style="font-weight: 900; color: var(--teal);">WAPPTI</span>
-  <div class="footer-links">
-    <a href="privacy-policy">Política de privacidad</a>
-    <a href="terminos-y-condiciones">Términos y Condiciones</a>
-  </div>
-  <p style="font-size: .8rem; color: var(--muted);">Wappti © 2026 – Desarrollado por <a href="https://publikalo.net" target="_blank" style="color: var(--teal); text-decoration: none;">Publikalb</a></p>
-</footer>
-<script src="js/main.js"></script>
+  <script src="js/include.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

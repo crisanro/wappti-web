@@ -8,21 +8,21 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="css/styles.css">
   <style>
     :root { 
-      --teal: #0d9488; --teal-dk: #0f766e; --dark: #1f2937; 
+      --teal: #2BB5A0; /* Actualizado a tu verde corporativo */
+      --teal-dk: #1e9080; 
+      --dark: #1f2937; 
       --text: #4b5563; --muted: #6b7280; --border: #e5e7eb; 
-      --bg-gray: #f9fafb; --orange: #f59e0b; --radius: 12px; 
+      --bg-gray: #f9fafb; --orange: #E07B39; --radius: 12px; 
     }
     
-    body { font-family: 'Nunito', sans-serif; margin: 0; color: var(--text); }
+    body { font-family: 'Nunito', sans-serif; margin: 0; color: var(--text); background-color: #fff; }
 
-    /* Nav corporativo */
-    nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 8%; border-bottom: 1px solid var(--border); }
-    .nav-links a { margin-left: 1.5rem; text-decoration: none; color: var(--text); font-size: .9rem; font-weight: 600; }
-
-    .policy-hero { background: linear-gradient(135deg, #f9fafb 60%, #e8f6f4 100%); padding: 4rem 8% 3rem; border-bottom: 1px solid var(--border); }
+    /* Estilos específicos de la página de políticas */
+    .policy-hero { background: linear-gradient(135deg, #f9fafb 60%, #e8f6f4 100%); padding: 4rem 8% 3rem; border-bottom: 1px solid var(--border); text-align: center; }
     .policy-hero h1 { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 900; color: var(--dark); margin: 0; }
     .policy-hero h1 span { color: var(--teal); }
     .policy-hero p { font-size: .85rem; color: var(--muted); margin-top: .5rem; }
@@ -37,7 +37,6 @@
     .data-list li { display: flex; gap: .8rem; align-items: flex-start; font-size: .9rem; line-height: 1.7; }
     .data-list li::before { content: '→'; color: var(--orange); font-weight: 900; flex-shrink: 0; }
 
-    /* Tabla de gestiones */
     .pricing-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.9rem; border-radius: 8px; overflow: hidden; }
     .pricing-table th { background: var(--teal); color: white; padding: 12px; text-align: left; }
     .pricing-table td { padding: 12px; border-bottom: 1px solid var(--border); }
@@ -46,107 +45,149 @@
     .contact-box { background: linear-gradient(135deg, var(--teal) 0%, var(--teal-dk) 100%); border-radius: var(--radius); padding: 2rem; color: white; margin-top: 1rem; }
     .contact-box a { color: #a7f3d0; text-decoration: none; font-weight: 700; }
 
-    footer { padding: 3rem 8%; background: var(--bg-gray); border-top: 1px solid var(--border); text-align: center; }
-    .footer-links { margin: 1rem 0; }
-    .footer-links a { margin: 0 .5rem; text-decoration: none; color: var(--muted); font-size: .85rem; }
-
-    @media (max-width: 768px) { .policy-body { padding: 2rem 5%; } .nav-links { display: none; } }
+    @media (max-width: 768px) { .policy-body { padding: 2rem 5%; } }
   </style>
 </head>
 <body>
 
-<nav>
-  <a href="/" class="logo">
-    <img src="img/wappti.png" alt="Wappti Logo" style="height: 30px; width: auto;">
-  </a>
-  <div class="nav-links">
-    <a href="/#ventajas">Ventajas</a>
-    <a href="/#precios">Precio</a>
-    <a href="/#faq">FAQ</a>
-  </div>
-</nav>
+  <div data-include="header"></div>
 
-<div class="policy-hero">
-  <h1>Términos y <span>Condiciones</span></h1>
-  <p>Acuerdo de Licencia de Usuario Final (EULA)</p>
-  <p>Última actualización: 14 de marzo de 2026</p>
-</div>
-
-<div class="policy-body">
-
-  <div class="policy-section">
-    <p>Este contrato rige el uso de la aplicación <strong>WAPPTI</strong>, operada por <strong>ANDROGA LLC</strong>. Al utilizar nuestros servicios, usted acepta los términos aquí descritos, los cuales incluyen la gestión de suscripciones digitales y paquetes de gestiones adicionales.</p>
+  <div class="policy-hero">
+    <h1>Términos y <span>Condiciones</span></h1>
+    <p>Acuerdo de Licencia de Usuario Final (EULA)</p>
+    <p>Última actualización: 31 de marzo de 2026</p>
   </div>
 
-  <div class="policy-section">
-    <h2>1. Suscripciones Digitales (App Store / Play Store)</h2>
-    <p>WAPPTI ofrece planes premium de renovación automática procesados por las tiendas de aplicaciones oficiales:</p>
-    <ul class="data-list">
-      <li><strong>Suscripción Mensual:</strong> $9.99 USD</li>
-      <li><strong>Suscripción Anual:</strong> $99.99 USD</li>
-    </ul>
-    <div class="info-card">
-      <p>El pago se cargará a su cuenta de Apple o Google al confirmar la compra. La suscripción se renueva automáticamente a menos que se cancele 24 horas antes del final del periodo. La gestión y cancelación se realiza directamente en los ajustes de su cuenta de la tienda.</p>
+  <div class="policy-body">
+
+    <div class="policy-section">
+      <p>Este contrato rige el uso de la aplicación <strong>WAPPTI</strong>, operada por <strong>ANDROGA LLC</strong>. Al utilizar nuestros servicios, usted acepta los términos aquí descritos, los cuales incluyen la gestión de suscripciones digitales y paquetes de gestiones adicionales.</p>
     </div>
-  </div>
 
-  <div class="policy-section">
-    <h2>2. Paquetes de Gestiones Adicionales</h2>
-    <p>Además de la suscripción, los usuarios pueden adquirir paquetes de gestiones. Estos cargos son procesados por WAPPTI vía Stripe:</p>
-    <table class="pricing-table">
-      <thead>
-        <tr><th>Gestiones Adicionales</th><th>Costo (USD)</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>0 Gestiones</td><td>Gratis</td></tr>
-        <tr><td>+ 50 Gestiones</td><td>$12.00</td></tr>
-        <tr><td>+ 100 Gestiones</td><td>$19.00</td></tr>
-        <tr><td>+ 200 Gestiones</td><td>$35.00</td></tr>
-        <tr><td>+ 300 Gestiones</td><td>$48.00</td></tr>
-        <tr><td>+ 400 Gestiones</td><td>$55.00</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="policy-section">
-    <h2>3. Política de Garantía y Reembolso</h2>
-    <p>Nuestra política de reembolso se aplica específicamente a los paquetes de gestiones bajo las siguientes condiciones:</p>
-    <ul class="data-list">
-      <li><strong>Plazo:</strong> Hasta 3 días después de la compra.</li>
-      <li><strong>Condición de Uso:</strong> No haber enviado más de 20 recordatorios/gestiones del paquete nuevo.</li>
-      <li><strong>Monto:</strong> Se reembolsará el <strong>90% del valor cancelado</strong> (el 10% se retiene por comisiones de plataforma y administrativas).</li>
-      <li><strong>Suscripciones:</strong> Los reembolsos de los planes de $9.99 o $99.99 deben solicitarse directamente a Apple o Google.</li>
-    </ul>
-  </div>
-
-  <div class="policy-section">
-    <h2>4. Reglas de Licencia y Responsabilidad</h2>
-    <p>Se otorga una licencia de uso personal e intransferible. El usuario es el único responsable de la exactitud de los datos de sus clientes y el cumplimiento de las leyes locales de privacidad al contactarlos.</p>
-    <p>WAPPTI no se responsabiliza por pérdidas económicas derivadas de interrupciones técnicas o errores en la gestión de citas por parte del usuario.</p>
-  </div>
-
-  <div class="policy-section">
-    <h2>5. Contacto</h2>
-    <div class="contact-box">
-      <p>
-        Para soporte técnico o dudas sobre pagos:<br><br>
-        📧 <a href="mailto:soporte@publikalo.net">soporte@publikalo.net</a><br>
-        💬 WhatsApp: <strong>+593 960 585 581</strong><br>
-        📍 1704 Llano St Ste B-1399, NM, 87505, USA
-      </p>
+    <div class="policy-section">
+      <h2>1. Suscripciones Digitales (App Store / Play Store)</h2>
+      <p>WAPPTI ofrece planes premium de renovación automática procesados por las tiendas de aplicaciones oficiales:</p>
+      <ul class="data-list">
+        <li><strong>Suscripción Mensual:</strong> $9.99 USD</li>
+        <li><strong>Suscripción Anual:</strong> $99.99 USD</li>
+      </ul>
+      <div class="info-card">
+        <p>El pago se cargará a su cuenta de Apple o Google al confirmar la compra. La suscripción se renueva automáticamente a menos que se cancele 24 horas antes del final del periodo. La gestión y cancelación se realiza directamente en los ajustes de su cuenta de la tienda.</p>
+      </div>
     </div>
+
+    <div class="policy-section">
+      <h2>2. Paquetes de Gestiones Adicionales</h2>
+      <p>Además de la suscripción, los usuarios pueden adquirir paquetes de gestiones. Estos cargos son procesados por WAPPTI vía Stripe:</p>
+      <table class="pricing-table">
+        <thead>
+          <tr><th>Gestiones Adicionales</th><th>Costo (USD)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>0 Gestiones</td><td>Gratis</td></tr>
+          <tr><td>+ 50 Gestiones</td><td>$12.00</td></tr>
+          <tr><td>+ 100 Gestiones</td><td>$19.00</td></tr>
+          <tr><td>+ 200 Gestiones</td><td>$35.00</td></tr>
+          <tr><td>+ 300 Gestiones</td><td>$48.00</td></tr>
+          <tr><td>+ 400 Gestiones</td><td>$55.00</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="policy-section">
+      <h2>3. Programa de Referidos</h2>
+      <p>WAPPTI ofrece un programa de referidos mediante el cual los usuarios activos pueden obtener compensaciones económicas por recomendar la plataforma. La participación implica la aceptación de estas condiciones. Para detalles adicionales, consulte la <a href="/referidos" style="color: var(--teal); font-weight: 700;">página oficial del programa</a>.</p>
+
+      <h3 style="font-size:1rem; font-weight:800; color:var(--dark); margin:1.5rem 0 .8rem;">3.1 Código de Referido</h3>
+      <p>Cada usuario dispone de un código único e intransferible, válido de forma indefinida. Para que la comisión sea acreditada, el nuevo usuario debe ingresar este código al momento de su registro o en su primera compra de gestiones.</p>
+
+      <h3 style="font-size:1rem; font-weight:800; color:var(--dark); margin:1.5rem 0 .8rem;">3.2 Estructura de Comisiones</h3>
+      <p>Las comisiones aplican <strong>exclusivamente sobre compras de paquetes de gestiones adicionales</strong>. Las suscripciones mensuales o anuales no generan comisión. El porcentaje se calcula sobre el valor bruto de la compra:</p>
+
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>Compra del Referido</th>
+            <th>Comisión</th>
+            <th>Ejemplo (Paquete $12)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1.ª compra de gestiones</td>
+            <td><strong>60%</strong></td>
+            <td>$7.20 USD</td>
+          </tr>
+          <tr>
+            <td>2.ª compra de gestiones</td>
+            <td><strong>30%</strong></td>
+            <td>$3.60 USD</td>
+          </tr>
+          <tr>
+            <td>3.ª compra de gestiones</td>
+            <td><strong>15%</strong></td>
+            <td>$1.80 USD</td>
+          </tr>
+          <tr>
+            <td>4.ª compra en adelante</td>
+            <td>Sin comisión</td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 style="font-size:1rem; font-weight:800; color:var(--dark); margin:1.5rem 0 .8rem;">3.3 Pago de Comisiones</h3>
+      <ul class="data-list">
+        <li><strong>Monto mínimo:</strong> Se requiere un saldo acumulado de <strong>$10.00 USD</strong> para solicitar un retiro.</li>
+        <li><strong>Métodos:</strong> Binance Pay (Internacional) y Banco Pichincha (Ecuador).</li>
+        <li><strong>Tiempos:</strong> Los pagos se procesan en <strong>24–48 horas hábiles</strong>, siempre que hayan transcurrido 5 días desde la última comisión para mitigar riesgos de reembolso.</li>
+      </ul>
+
+      <h3 style="font-size:1rem; font-weight:800; color:var(--dark); margin:1.5rem 0 .8rem;">3.4 Reembolsos y Beneficios</h3>
+      <p>Si un referido obtiene un reembolso, la comisión generada será deducida del saldo del referidor. Como beneficio, los nuevos usuarios referidos recibirán <strong>20 gestiones de bienvenida</strong> en lugar de las 10 estándar.</p>
+
+      <h3 style="font-size:1rem; font-weight:800; color:var(--dark); margin:1.5rem 0 .8rem;">3.5 Uso Fraudulento</h3>
+      <p>Queda estrictamente prohibido el auto-referido y la creación de cuentas falsas. WAPPTI se reserva el derecho de anular comisiones y cancelar cuentas que incurran en prácticas fraudulentas sin previo aviso.</p>
+
+      <div class="info-card">
+        <p>¿Tienes dudas sobre tus ganancias? Visita nuestra <a href="/referidos" style="color: var(--teal); font-weight: 700;">Guía del Programa de Referidos →</a></p>
+      </div>
+    </div>
+
+    <div class="policy-section">
+      <h2>4. Política de Garantía y Reembolso</h2>
+      <p>Nuestra política de reembolso se aplica específicamente a los paquetes de gestiones bajo las siguientes condiciones:</p>
+      <ul class="data-list">
+        <li><strong>Plazo:</strong> Hasta 3 días después de la compra.</li>
+        <li><strong>Condición de Uso:</strong> No haber enviado más de 20 recordatorios/gestiones del paquete nuevo.</li>
+        <li><strong>Monto:</strong> Se reembolsará el <strong>90% del valor cancelado</strong> (el 10% se retiene por comisiones de plataforma y administrativas).</li>
+        <li><strong>Suscripciones:</strong> Los reembolsos de los planes de $9.99 o $99.99 deben solicitarse directamente a Apple o Google.</li>
+      </ul>
+    </div>
+
+    <div class="policy-section">
+      <h2>5. Reglas de Licencia y Responsabilidad</h2>
+      <p>Se otorga una licencia de uso personal e intransferible. El usuario es el único responsable de la exactitud de los datos de sus clientes y el cumplimiento de las leyes locales de privacidad al contactarlos.</p>
+      <p>WAPPTI no se responsabiliza por pérdidas económicas derivadas de interrupciones técnicas o errores en la gestión de citas por parte del usuario.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>6. Contacto</h2>
+      <div class="contact-box">
+        <p>
+          Para soporte técnico o dudas sobre pagos:<br><br>
+          📧 <a href="mailto:soporte@publikalo.net">soporte@publikalo.net</a><br>
+          💬 WhatsApp: <strong>+593 960 585 581</strong><br>
+          📍 1704 Llano St Ste B-1399, NM, 87505, USA
+        </p>
+      </div>
+    </div>
+
   </div>
 
-</div>
+  <div data-include="footer" id="descargar"></div>
 
-<footer>
-  <span class="footer-logo" style="font-weight: 900; color: var(--teal);">WAPPTI</span>
-  <div class="footer-links">
-    <a href="privacy-policy">Política de privacidad</a>
-    <a href="terminos-y-condiciones">Términos y Condiciones</a>
-  </div>
-  <p style="font-size: .8rem; color: var(--muted);">Wappti © 2026 – Desarrollado por <a href="https://publikalo.net" target="_blank" style="color: var(--teal); text-decoration: none;">Publikalb</a></p>
-</footer>
-
+  <script src="js/include.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

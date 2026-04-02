@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WhatsApp Marketing – Campañas Masivas con Wappti</title>
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <style>
+    /* ── ESTILOS EXCLUSIVOS DE MARKETING ── */
+    
+    /* ── HERO MARKETING ── */
+    .hero-marketing {
+      background: linear-gradient(135deg, var(--dark) 0%, #1e3a3a 50%, var(--teal-dk) 100%);
+      padding: 6rem 8% 5rem;
+      position: relative; overflow: hidden;
+      text-align: center;
+    }
+    .hero-marketing::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 80% 20%, rgba(224,123,57,.15) 0%, transparent 60%),
+                  radial-gradient(ellipse at 20% 80%, rgba(43,181,160,.2) 0%, transparent 50%);
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(224,123,57,.15); border: 1px solid rgba(224,123,57,.4);
+      color: #ffa166; font-size: .8rem; font-weight: 800;
+      padding: .35rem .9rem; border-radius: 100px; letter-spacing: .06em;
+      margin-bottom: 1.5rem; text-transform: uppercase;
+      position: relative;
+    }
+    .hero-marketing h1 {
+      font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 900;
+      color: #fff; line-height: 1.15; margin-bottom: 1.2rem;
+      position: relative;
+    }
+    .hero-marketing h1 span { color: var(--orange); }
+    .hero-marketing p {
+      font-size: clamp(1rem, 2vw, 1.15rem); color: #cbd5e1;
+      max-width: 600px; margin: 0 auto 2.5rem; line-height: 1.7;
+      position: relative;
+    }
+    .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; position: relative; }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      background: #111B21; /* Tono oscuro tipo WhatsApp */
+      padding: 2.5rem 8%;
+      display: flex; justify-content: center; gap: 4rem; flex-wrap: wrap;
+      border-bottom: 1px solid var(--dark);
+    }
+    .stat { text-align: center; }
+    .stat-num { font-size: 2.5rem; font-weight: 900; color: #4ade80; font-family: 'Space Mono', monospace; line-height: 1; }
+    .stat-label { font-size: .85rem; color: var(--muted); font-weight: 700; margin-top: .5rem; text-transform: uppercase; letter-spacing: .05em; }
+
+    /* ── SECTIONS ── */
+    .section { padding: 5rem 8%; }
+    .section-label {
+      display: inline-block; color: var(--orange); font-size: .8rem;
+      font-weight: 800; text-transform: uppercase; letter-spacing: .1em;
+      margin-bottom: .6rem;
+    }
+    .section-title { font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 900; color: var(--dark); margin-bottom: 1rem; }
+    .section-sub { color: var(--muted); font-size: 1.05rem; line-height: 1.7; max-width: 650px; }
+
+    /* ── VENTAJAS GRID (Rules adaptadas) ── */
+    .rules { background: var(--bg-gray); }
+    .rules-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .rule-card {
+      background: #fff; border-radius: var(--radius); padding: 2rem 1.5rem;
+      border: 1px solid var(--border); display: flex; gap: 1.2rem; flex-direction: column;
+      transition: all .3s ease;
+    }
+    .rule-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(43,181,160,.1); border-color: var(--teal); }
+    .rule-icon {
+      width: 50px; height: 50px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center; font-size: 1.4rem;
+    }
+    .rule-icon.green { background: #e8f6f4; color: var(--teal); }
+    .rule-icon.orange { background: #fdf2e9; color: var(--orange); }
+    .rule-icon.blue { background: #e0f2fe; color: #3b82f6; }
+    .rule-card h4 { font-size: 1.05rem; font-weight: 800; color: var(--dark); margin-bottom: .2rem; }
+    .rule-card p { font-size: .9rem; color: var(--muted); line-height: 1.6; }
+
+    /* ── COMO FUNCIONA (Steps) ── */
+    .how { background: #fff; }
+    .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .step-card {
+      background: var(--bg-gray); border-radius: var(--radius); padding: 2.5rem 1.8rem;
+      border: 1px solid var(--border); position: relative; text-align: center;
+    }
+    .step-num {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: var(--teal); color: #fff;
+      font-family: 'Space Mono', monospace; font-weight: 800; font-size: 1.2rem;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1.5rem; box-shadow: 0 4px 15px rgba(43,181,160,.3);
+    }
+    .step-card h3 { font-size: 1.1rem; font-weight: 800; color: var(--dark); margin-bottom: .8rem; }
+    .step-card p { font-size: .9rem; color: var(--muted); line-height: 1.6; }
+
+    /* ── COMPARATIVA EMAIL VS WHATSAPP ── */
+    .comparativa { background: var(--dark); color: #fff; padding: 5rem 8%; text-align: center; }
+    .comp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 800px; margin: 3rem auto 0; }
+    .comp-card { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: var(--radius); padding: 2.5rem 2rem; }
+    .comp-card.winner { background: linear-gradient(135deg, rgba(43,181,160,.2), rgba(43,181,160,.05)); border-color: var(--teal); position: relative; }
+    .comp-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--teal); padding: .2rem 1rem; border-radius: 20px; font-size: .75rem; font-weight: 800; text-transform: uppercase; }
+    .comp-title { font-size: 1.2rem; font-weight: 800; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; gap: .5rem; }
+    .comp-list { list-style: none; text-align: left; }
+    .comp-list li { font-size: .95rem; margin-bottom: 1rem; display: flex; align-items: center; gap: .8rem; color: rgba(255,255,255,.8); }
+    .comp-list li i.fa-times { color: #ef4444; }
+    .comp-list li i.fa-check { color: #4ade80; }
+    .comp-card.winner .comp-list li { color: #fff; }
+
+    /* ── BANNER COSTOS ── */
+    .cost-banner {
+      background: linear-gradient(135deg, var(--orange) 0%, var(--orange-dk) 100%);
+      border-radius: var(--radius); padding: 3rem 4rem; margin: 4rem 8%;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem;
+      box-shadow: 0 15px 30px rgba(224,123,57,.2);
+    }
+    .cost-text h3 { color: #fff; font-size: 1.6rem; font-weight: 900; margin-bottom: .5rem; }
+    .cost-text p { color: rgba(255,255,255,.9); font-size: 1rem; max-width: 500px; line-height: 1.6; }
+    
+    /* ── FAQ ── */
+    .faq { background: var(--bg-gray); }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3rem; }
+    .faq-item { background: #fff; border-radius: var(--radius); padding: 1.8rem; border: 1px solid var(--border); }
+    .faq-item h4 { font-size: 1rem; font-weight: 800; color: var(--dark); margin-bottom: .8rem; }
+    .faq-item p { font-size: .9rem; color: var(--muted); line-height: 1.7; }
+
+    @media (max-width: 768px) {
+      .comp-grid, .faq-grid { grid-template-columns: 1fr; }
+      .cost-banner { padding: 2rem; text-align: center; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<div data-include="header"></div>
+
+<section class="hero-marketing">
+  <div class="hero-badge fade-up">🚀 Escala tus ventas</div>
+  <h1 class="fade-up delay-1">Llega directo al bolsillo de tus clientes con <span>WhatsApp</span></h1>
+  <p class="fade-up delay-2">Olvida la bandeja de SPAM. Segmenta tu base de datos, envía promociones personalizadas, imágenes y botones interactivos con una tasa de apertura insuperable.</p>
+  <div class="hero-actions fade-up delay-3">
+    <a href="https://web.wappti.app/" target="_blank" class="btn btn-orange">Crear mi primera campaña</a>
+    <a href="#ventajas" class="btn btn-outline-white">Ver beneficios ↓</a>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="stat fade-up">
+    <div class="stat-num">98%</div>
+    <div class="stat-label">Tasa de Apertura</div>
+  </div>
+  <div class="stat fade-up delay-1">
+    <div class="stat-num">5x</div>
+    <div class="stat-label">Más clics que el email</div>
+  </div>
+  <div class="stat fade-up delay-2">
+    <div class="stat-num">0%</div>
+    <div class="stat-label">Bandeja de SPAM</div>
+  </div>
+  <div class="stat fade-up delay-3">
+    <div class="stat-num">100%</div>
+    <div class="stat-label">Lectura en minutos</div>
+  </div>
+</div>
+
+<section class="section rules" id="ventajas">
+  <div style="text-align:center;">
+    <span class="section-label">¿Por qué WhatsApp?</span>
+    <h2 class="section-title">El canal de marketing más efectivo</h2>
+    <p class="section-sub" style="margin: 0 auto;">Tus clientes ya usan WhatsApp todos los días. Háblales donde están dispuestos a escuchar.</p>
+  </div>
+
+  <div class="rules-grid">
+    <div class="rule-card fade-up">
+      <div class="rule-icon green"><i class="fas fa-filter"></i></div>
+      <div>
+        <h4>Segmentación Inteligente</h4>
+        <p>No envíes el mismo mensaje a todos. Filtra por clientes que no te visitan hace 3 meses, por servicios adquiridos o por etiquetas personalizadas.</p>
+      </div>
+    </div>
+    <div class="rule-card fade-up delay-1">
+      <div class="rule-icon orange"><i class="fas fa-bullseye"></i></div>
+      <div>
+        <h4>Botones Interactivos</h4>
+        <p>Aumenta la conversión incluyendo botones reales en tus mensajes como "Agendar ahora", "Ver promoción" o "Llamar". Nada de links feos y largos.</p>
+      </div>
+    </div>
+    <div class="rule-card fade-up delay-2">
+      <div class="rule-icon blue"><i class="fas fa-photo-video"></i></div>
+      <div>
+        <h4>Formatos Multimedia</h4>
+        <p>Atrapa la atención enviando Flyers, catálogos en PDF, imágenes de tus productos o videos cortos junto con tu texto promocional.</p>
+      </div>
+    </div>
+    <div class="rule-card fade-up">
+      <div class="rule-icon green"><i class="fas fa-shield-alt"></i></div>
+      <div>
+        <h4>100% Seguro y Oficial</h4>
+        <p>Olvídate de aplicaciones piratas que bloquean tu número. En Wappti utilizamos la API oficial de Meta para garantizar la entrega de tus campañas.</p>
+      </div>
+    </div>
+    <div class="rule-card fade-up delay-1">
+      <div class="rule-icon orange"><i class="fas fa-chart-line"></i></div>
+      <div>
+        <h4>Resultados Medibles</h4>
+        <p>Controla el retorno de tu inversión. Descubre cuántos clientes recibieron el mensaje, cuántos lo leyeron y cuántos agendaron una nueva cita.</p>
+      </div>
+    </div>
+    <div class="rule-card fade-up delay-2">
+      <div class="rule-icon blue"><i class="fas fa-user-tag"></i></div>
+      <div>
+        <h4>Mensajes Personalizados</h4>
+        <p>El sistema inserta automáticamente el nombre de cada cliente (Ej. "Hola María"). La personalización dispara la confianza y las ventas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section how">
+  <div style="text-align:center;">
+    <span class="section-label">Simplicidad total</span>
+    <h2 class="section-title">Lanza tu campaña en 4 pasos</h2>
+  </div>
+  <div class="steps-grid">
+    <div class="step-card fade-up">
+      <div class="step-num">1</div>
+      <h3>Selecciona tu público</h3>
+      <p>Elige a todos tus contactos o usa los filtros avanzados para llegar a un grupo específico.</p>
+    </div>
+    <div class="step-card fade-up delay-1">
+      <div class="step-num">2</div>
+      <h3>Crea tu mensaje</h3>
+      <p>Escribe tu texto, añade emojis y utiliza variables para que el mensaje salude por el nombre.</p>
+    </div>
+    <div class="step-card fade-up delay-2">
+      <div class="step-num">3</div>
+      <h3>Añade la magia</h3>
+      <p>Sube una imagen atractiva de tu promoción y configura botones de acción rápida.</p>
+    </div>
+    <div class="step-card fade-up delay-3">
+      <div class="step-num">4</div>
+      <h3>Envía y factura</h3>
+      <p>Dale a enviar. Los mensajes llegarán de forma escalonada y segura al bolsillo de tus clientes.</p>
+    </div>
+  </div>
+</section>
+
+<section class="comparativa">
+  <h2 style="font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 900; margin-bottom: 1rem;">El Email Marketing es cosa del pasado</h2>
+  <p style="color: rgba(255,255,255,.7); max-width: 600px; margin: 0 auto;">Mira por qué los negocios modernos están migrando toda su comunicación promocional a WhatsApp.</p>
+  
+  <div class="comp-grid">
+    <div class="comp-card fade-up">
+      <div class="comp-title"><i class="fas fa-envelope"></i> Email Tradicional</div>
+      <ul class="comp-list">
+        <li><i class="fas fa-times"></i> Tasa de apertura del 15% - 20%</li>
+        <li><i class="fas fa-times"></i> Termina en la pestaña de "Promociones"</li>
+        <li><i class="fas fa-times"></i> Alto riesgo de caer en la bandeja de SPAM</li>
+        <li><i class="fas fa-times"></i> La gente tarda días en leerlo</li>
+        <li><i class="fas fa-times"></i> Comunicación fría y distante</li>
+      </ul>
+    </div>
+    
+    <div class="comp-card winner fade-up delay-1">
+      <div class="comp-badge">El Ganador</div>
+      <div class="comp-title" style="color: var(--teal);"><i class="fab fa-whatsapp"></i> WhatsApp Marketing</div>
+      <ul class="comp-list">
+        <li><i class="fas fa-check"></i> <strong>Tasa de apertura superior al 98%</strong></li>
+        <li><i class="fas fa-check"></i> <strong>Notificación directa en la pantalla</strong></li>
+        <li><i class="fas fa-check"></i> <strong>Bandeja de entrada principal garantizada</strong></li>
+        <li><i class="fas fa-check"></i> <strong>Lectura casi inmediata (minutos)</strong></li>
+        <li><i class="fas fa-check"></i> <strong>Canal íntimo, genera confianza al instante</strong></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="cost-banner fade-up">
+  <div class="cost-text">
+    <h3>Sin suscripciones extra</h3>
+    <p>La herramienta de Marketing viene incluida en tu cuenta. Cada mensaje promocional enviado simplemente consume <strong>1 Gestión</strong> de tu paquete actual. ¡Así de fácil, transparente y justo!</p>
+  </div>
+  <div>
+    <a href="/#precios" class="btn" style="background: #fff; color: var(--orange-dk); padding: 1rem 2rem; font-size: 1.05rem;">Ver paquetes de gestiones</a>
+  </div>
+</div>
+
+<section class="section faq">
+  <div style="text-align:center; margin-bottom: 2rem;">
+    <span class="section-label">Dudas comunes</span>
+    <h2 class="section-title">Preguntas Frecuentes</h2>
+  </div>
+  <div class="faq-grid">
+    <div class="faq-item fade-up">
+      <h4>¿Me pueden bloquear el número de WhatsApp?</h4>
+      <p>No. Como nosotros utilizamos la API Oficial de Meta (WhatsApp Business API), los envíos masivos se realizan bajo las normativas legales de Meta, evitando bloqueos a tu línea personal.</p>
+    </div>
+    <div class="faq-item fade-up delay-1">
+      <h4>¿Puedo adjuntar imágenes a mi campaña?</h4>
+      <p>¡Sí! Las campañas de Wappti soportan el envío de imágenes atractivas, lo cual es ideal para flyers de descuentos, promociones del mes o nuevos catálogos.</p>
+    </div>
+    <div class="faq-item fade-up">
+      <h4>¿Cuántos mensajes puedo enviar a la vez?</h4>
+      <p>Puedes enviar a cientos de clientes simultáneamente. El sistema encola los mensajes y los envía respetando los límites de velocidad de la API oficial para asegurar una entrega exitosa al 100%.</p>
+    </div>
+    <div class="faq-item fade-up delay-1">
+      <h4>¿Necesito conocimientos técnicos?</h4>
+      <p>Para nada. La interfaz está diseñada para que cualquier persona pueda escribir el texto, seleccionar a los clientes y presionar "Enviar" en menos de 3 minutos.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background: var(--teal-lt); text-align: center; border-top: 1px solid var(--border);">
+  <h2 class="section-title">Reactiva clientes dormidos hoy mismo</h2>
+  <p class="section-sub" style="margin: 0 auto 2rem; color: var(--dark2);">Tus clientes están a un mensaje de volver a comprar. No dejes pasar la oportunidad.</p>
+  <a href="https://web.wappti.app/" class="btn btn-orange" style="padding: 1rem 2.5rem; font-size: 1.1rem;">Empezar mi campaña gratis</a>
+</section>
+
+<div data-include="footer" id="descargar"></div>
+
+<script src="js/include.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
